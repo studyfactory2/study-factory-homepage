@@ -1,0 +1,13 @@
+/** IMPORTS **/
+@import "variables.scss";
+@import "reset.scss";
+
+@import "pc/general.scss";
+@import "pc/layout/top.scss";
+@import "pc/layout/footer.scss";
+@import "pc/homepage/homepage.scss";
+
+@import "mobile/general.scss";
+@import "mobile/layout/top.scss";
+@import "mobile/layout/footer.scss";
+@import "mobile/homepage/homepage.scss";

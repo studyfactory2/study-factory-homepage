@@ -1,0 +1,30 @@
+#pc-wrap {
+	#footer {
+		width: 100%;
+		padding: 38px 0;
+		background: #090a0b;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+		.container {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 7px;
+		}
+
+		strong {
+			font-size: 15px;
+			font-weight: 800;
+		}
+
+		span,
+		p {
+			font-size: 13px;
+			color: rgba(255, 255, 255, 0.52);
+		}
+	}
+}

@@ -1,0 +1,25 @@
+#pc-wrap {
+	width: 100%;
+	min-height: 100vh;
+	background: $color-ink;
+
+	.container {
+		position: relative;
+		width: $container-pc;
+		margin: 0 auto;
+		display: flex;
+
+		@media (max-width: 1380px) {
+			width: calc(100% - 80px);
+		}
+
+		@media (max-width: 1024px) {
+			width: calc(100% - 48px);
+		}
+	}
+
+	.layout-main {
+		width: 100%;
+		min-height: 100vh;
+	}
+}
