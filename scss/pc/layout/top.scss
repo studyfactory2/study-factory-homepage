@@ -5,13 +5,13 @@
 		left: 0;
 		z-index: 20;
 		width: 100%;
-		border-bottom: 1px solid rgba(248, 243, 234, 0.14);
-		background: rgba(16, 20, 18, 0.86);
-		backdrop-filter: blur(18px);
+		border-bottom: 1px solid rgba(248, 243, 234, 0.1);
+		background: rgba(5, 7, 6, 0.44);
+		backdrop-filter: blur(20px);
 
 		&__container {
 			width: $pc-container;
-			height: 88px;
+			height: 86px;
 			margin: 0 auto;
 		}
 
@@ -36,11 +36,11 @@
 		}
 
 		&__nav {
-			gap: 34px;
+			gap: 36px;
 		}
 
 		&__nav-link {
-			color: rgba(248, 243, 234, 0.76);
+			color: rgba(248, 243, 234, 0.82);
 			font-size: 12px;
 			font-weight: 850;
 			letter-spacing: 0.14em;
@@ -58,7 +58,8 @@
 		&__locale {
 			min-width: 48px;
 			color: $cream;
-			border-color: rgba(248, 243, 234, 0.22);
+			border-color: rgba(248, 243, 234, 0.24);
+			background: rgba(248, 243, 234, 0.02);
 		}
 	}
 }
