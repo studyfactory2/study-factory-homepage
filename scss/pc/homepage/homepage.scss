@@ -1,8 +1,190 @@
-@import "hero.scss";
-
 #pc-wrap {
 	.home-page {
-		width: 100%;
+		background: $cream;
+	}
+
+	.pc-home-hero {
+		position: relative;
 		min-height: 100vh;
+		padding: 126px 0 42px;
+		overflow: hidden;
+		background:
+			linear-gradient(90deg, rgba(16, 20, 18, 0.94), rgba(16, 20, 18, 0.78) 45%, rgba(16, 20, 18, 0.48)),
+			radial-gradient(circle at 82% 20%, rgba(184, 138, 74, 0.22), transparent 34%),
+			$night;
+		color: $cream;
+
+		&__container {
+			position: relative;
+			z-index: 1;
+			width: $pc-container;
+			min-height: calc(100vh - 190px);
+			margin: 0 auto;
+			flex-direction: row !important;
+			align-items: center;
+			justify-content: space-between;
+			gap: 80px;
+		}
+
+		&__copy {
+			width: 520px;
+			gap: 24px;
+
+			h1 {
+				font-size: 86px;
+				line-height: 0.94;
+				font-weight: 900;
+				letter-spacing: 0;
+			}
+
+			strong {
+				font-size: 28px;
+				font-weight: 900;
+			}
+
+			p {
+				color: rgba(248, 243, 234, 0.72);
+				font-size: 17px;
+				line-height: 1.8;
+			}
+		}
+
+		&__actions {
+			gap: 12px;
+			margin-top: 10px;
+
+			.MuiButton-outlined {
+				color: $cream;
+				border-color: rgba(248, 243, 234, 0.26);
+			}
+		}
+
+		&__film {
+			position: relative;
+			width: 600px;
+			height: 560px;
+			border: 1px solid rgba(248, 243, 234, 0.14);
+			background:
+				linear-gradient(140deg, rgba(248, 243, 234, 0.08), transparent 34%),
+				linear-gradient(180deg, rgba(88, 113, 95, 0.18), rgba(184, 138, 74, 0.08));
+		}
+
+		&__film-meta {
+			position: absolute;
+			top: 24px;
+			left: 24px;
+			right: 24px;
+			flex-direction: row !important;
+			gap: 18px;
+			color: rgba(248, 243, 234, 0.58);
+			font-size: 11px;
+			font-weight: 850;
+			letter-spacing: 0.13em;
+			text-transform: uppercase;
+		}
+
+		&__film-frame {
+			position: absolute;
+			inset: 96px 58px 118px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background:
+				repeating-linear-gradient(90deg, rgba(248, 243, 234, 0.08) 0 10px, transparent 10px 24px),
+				linear-gradient(180deg, rgba(16, 20, 18, 0.2), rgba(16, 20, 18, 0.72));
+
+			svg {
+				width: 72px;
+				height: 72px;
+				color: rgba(248, 243, 234, 0.34);
+			}
+		}
+
+		&__proof {
+			position: absolute;
+			left: 58px;
+			right: 58px;
+			bottom: 52px;
+			justify-content: space-between;
+			color: rgba(248, 243, 234, 0.72);
+			font-size: 13px;
+			font-weight: 800;
+		}
+
+		&__exams {
+			position: relative;
+			z-index: 1;
+			width: $pc-container;
+			margin: 0 auto;
+			gap: 10px;
+			flex-wrap: wrap;
+
+			span {
+				border: 1px solid rgba(248, 243, 234, 0.24);
+				border-radius: 4px;
+				padding: 10px 16px;
+				color: rgba(248, 243, 234, 0.76);
+				font-size: 13px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.pc-home-focus,
+	.pc-home-products {
+		padding: 132px 0;
+	}
+
+	.pc-home-focus {
+		background: $cream;
+
+		&__grid {
+			width: $pc-container;
+			margin: 58px auto 0;
+			gap: 24px;
+		}
+
+		&__card {
+			flex: 1;
+			min-height: 310px;
+			padding: 34px;
+			gap: 22px;
+			border: 1px solid $line;
+			background: rgba(255, 255, 255, 0.62);
+
+			svg {
+				color: $forest;
+			}
+
+			span {
+				color: $forest;
+				font-size: 12px;
+				font-weight: 850;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+			}
+
+			strong {
+				font-size: 28px;
+				line-height: 1.24;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 15px;
+				line-height: 1.8;
+			}
+		}
+	}
+
+	.pc-home-products {
+		background: $paper;
+
+		&__grid {
+			width: $pc-container;
+			margin: 58px auto 0;
+			gap: 24px;
+		}
 	}
 }

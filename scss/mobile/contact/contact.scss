@@ -1,0 +1,15 @@
+#mobile-wrap {
+	.mobile-contact-page {
+		min-height: calc(100vh - 260px);
+		padding-bottom: 72px;
+
+		.contact-form {
+			width: $mobile-container;
+			margin: 0 auto;
+			gap: 14px;
+			padding: 22px;
+			border: 1px solid $line;
+			background: $paper;
+		}
+	}
+}

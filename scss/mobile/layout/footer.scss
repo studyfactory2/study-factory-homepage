@@ -1,31 +1,48 @@
 #mobile-wrap {
-	#footer {
-		width: 100%;
-		padding: 30px 0;
-		background: #090a0b;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+	.mobile-footer {
+		padding: 44px 20px;
+		gap: 28px;
+		background: $night;
+		color: $cream;
 
-		.container {
-			flex-direction: column;
-			gap: 14px;
+		&__brand {
+			gap: 10px;
+
+			span {
+				color: rgba(248, 243, 234, 0.48);
+				font-size: 11px;
+				font-weight: 850;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+			}
+
+			strong {
+				font-size: 26px;
+				font-weight: 900;
+			}
+
+			p {
+				color: rgba(248, 243, 234, 0.62);
+				font-size: 13px;
+			}
 		}
 
-		div {
-			display: flex;
-			flex-direction: column;
-			gap: 7px;
+		&__links {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 12px;
+
+			a {
+				color: rgba(248, 243, 234, 0.68);
+				font-size: 14px;
+				font-weight: 700;
+			}
 		}
 
-		strong {
-			font-size: 15px;
-			font-weight: 800;
-		}
-
-		span,
-		p {
-			font-size: 13px;
-			line-height: 1.55;
-			color: rgba(255, 255, 255, 0.54);
+		&__email {
+			color: $cream;
+			font-size: 18px;
+			font-weight: 850;
 		}
 	}
 }

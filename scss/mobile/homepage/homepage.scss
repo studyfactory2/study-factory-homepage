@@ -1,8 +1,137 @@
-@import "hero.scss";
-
 #mobile-wrap {
-	.home-page {
-		width: 100%;
+	.mobile-home-page {
+		background: $cream;
+	}
+
+	.mobile-home-hero {
 		min-height: 100vh;
+		padding: 118px 20px 36px;
+		background:
+			linear-gradient(180deg, rgba(16, 20, 18, 0.94), rgba(16, 20, 18, 0.78)),
+			radial-gradient(circle at 70% 18%, rgba(184, 138, 74, 0.22), transparent 34%), $night;
+		color: $cream;
+
+		&__copy {
+			gap: 18px;
+
+			h1 {
+				font-size: 52px;
+				line-height: 0.96;
+				font-weight: 900;
+				letter-spacing: 0;
+			}
+
+			strong {
+				font-size: 22px;
+				font-weight: 900;
+			}
+
+			p {
+				color: rgba(248, 243, 234, 0.72);
+				font-size: 15px;
+				line-height: 1.75;
+			}
+		}
+
+		&__film {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 260px;
+			margin: 34px 0 22px;
+			border: 1px solid rgba(248, 243, 234, 0.14);
+			background:
+				repeating-linear-gradient(90deg, rgba(248, 243, 234, 0.08) 0 9px, transparent 9px 22px),
+				linear-gradient(180deg, rgba(88, 113, 95, 0.2), rgba(184, 138, 74, 0.08));
+
+			svg {
+				width: 58px;
+				height: 58px;
+				color: rgba(248, 243, 234, 0.36);
+			}
+		}
+
+		&__actions {
+			gap: 10px;
+
+			.MuiButton-root {
+				flex: 1;
+			}
+
+			.MuiButton-outlined {
+				color: $cream;
+				border-color: rgba(248, 243, 234, 0.24);
+			}
+		}
+
+		&__exams {
+			margin-top: 22px;
+			gap: 8px;
+			overflow-x: auto;
+			padding-bottom: 4px;
+
+			span {
+				flex: 0 0 auto;
+				border: 1px solid rgba(248, 243, 234, 0.22);
+				border-radius: 4px;
+				padding: 9px 12px;
+				color: rgba(248, 243, 234, 0.76);
+				font-size: 12px;
+				font-weight: 750;
+			}
+		}
+	}
+
+	.mobile-home-focus,
+	.mobile-home-products {
+		padding: 72px 20px;
+	}
+
+	.mobile-home-focus {
+		gap: 18px;
+
+		h2 {
+			margin-top: 14px;
+			font-size: 36px;
+			line-height: 1.08;
+			font-weight: 900;
+		}
+
+		&__list {
+			margin-top: 28px;
+			gap: 12px;
+
+			> .MuiStack-root {
+				gap: 12px;
+				padding: 18px;
+				border: 1px solid $line;
+				background: rgba(255, 255, 255, 0.62);
+			}
+
+			svg {
+				color: $forest;
+			}
+
+			strong {
+				font-size: 16px;
+				font-weight: 850;
+			}
+		}
+	}
+
+	.mobile-home-products {
+		background: $paper;
+
+		h2 {
+			margin-top: 14px;
+			font-size: 34px;
+			line-height: 1.1;
+			font-weight: 900;
+		}
+
+		&__list {
+			margin-top: 30px;
+			gap: 16px;
+		}
 	}
 }

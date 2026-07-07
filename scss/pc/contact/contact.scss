@@ -1,0 +1,28 @@
+#pc-wrap {
+	.pc-contact-page {
+		min-height: calc(100vh - 312px);
+		background: $cream;
+
+		&__grid {
+			width: $pc-container;
+			margin: 0 auto;
+			padding: 170px 0 120px;
+			gap: 90px;
+
+			.pc-page-hero {
+				width: auto;
+				flex: 1;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.contact-form {
+		width: 480px;
+		gap: 16px;
+		padding: 34px;
+		border: 1px solid $line;
+		background: $paper;
+	}
+}

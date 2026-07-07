@@ -1,0 +1,9 @@
+#pc-wrap {
+	.pc-about-page {
+		min-height: calc(100vh - 312px);
+		background:
+			linear-gradient(90deg, rgba(248, 243, 234, 0.95), rgba(248, 243, 234, 0.82)),
+			radial-gradient(circle at 82% 20%, rgba(88, 113, 95, 0.16), transparent 32%),
+			$cream;
+	}
+}

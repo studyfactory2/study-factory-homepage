@@ -1,30 +1,84 @@
 #pc-wrap {
-	#footer {
-		width: 100%;
-		padding: 38px 0;
-		background: #090a0b;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+	.pc-footer {
+		background: $night;
+		color: $cream;
 
-		.container {
-			align-items: center;
-			justify-content: space-between;
+		&__container {
+			width: $pc-container;
+			margin: 0 auto;
+			padding: 76px 0;
+			gap: 80px;
 		}
 
-		div {
-			display: flex;
-			flex-direction: column;
-			gap: 7px;
+		&__brand {
+			width: 340px;
+			gap: 12px;
+
+			span {
+				color: rgba(248, 243, 234, 0.45);
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+			}
+
+			strong {
+				font-size: 28px;
+				font-weight: 900;
+			}
+
+			p {
+				color: rgba(248, 243, 234, 0.62);
+				font-size: 14px;
+			}
 		}
 
-		strong {
-			font-size: 15px;
-			font-weight: 800;
+		&__links {
+			flex: 1;
+			gap: 70px;
 		}
 
-		span,
-		p {
-			font-size: 13px;
-			color: rgba(255, 255, 255, 0.52);
+		&__group {
+			gap: 14px;
+
+			strong {
+				color: rgba(248, 243, 234, 0.9);
+				font-size: 13px;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+
+			a {
+				color: rgba(248, 243, 234, 0.58);
+				font-size: 14px;
+
+				&:hover {
+					color: $cream;
+				}
+			}
+		}
+
+		&__contact {
+			width: 290px;
+			gap: 16px;
+			align-items: flex-start;
+
+			span {
+				color: rgba(248, 243, 234, 0.52);
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				color: $cream;
+				font-size: 20px;
+				font-weight: 800;
+			}
 		}
 	}
 }

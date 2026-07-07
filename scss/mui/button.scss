@@ -1,0 +1,23 @@
+.MuiButton-root {
+	box-shadow: none;
+	text-transform: none;
+}
+
+.MuiButton-contained {
+	background: $ink;
+	color: $cream;
+
+	&:hover {
+		background: #000;
+	}
+}
+
+.MuiButton-outlined {
+	border-color: rgba(17, 19, 18, 0.22);
+	color: $ink;
+
+	&:hover {
+		border-color: $ink;
+		background: rgba(17, 19, 18, 0.04);
+	}
+}

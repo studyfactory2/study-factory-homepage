@@ -1,7 +1,14 @@
 {
 	"brand": {
 		"name": "자격증공장",
-		"headline": "The Proof of Potential",
-		"tagline": "공부만 하면 되는 공간"
+		"english": "Study Factory",
+		"slogan": "가능성의 증명"
+	},
+	"navigation": {
+		"studyFactory": "Study Factory",
+		"products": "Products",
+		"about": "About",
+		"researchLab": "Research Lab",
+		"contact": "Contact"
 	}
 }

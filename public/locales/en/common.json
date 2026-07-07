@@ -1,7 +1,14 @@
 {
 	"brand": {
 		"name": "Study Factory",
-		"headline": "The Proof of Potential",
-		"tagline": "A place built for disciplined focus."
+		"korean": "자격증공장",
+		"slogan": "The Proof of Potential"
+	},
+	"navigation": {
+		"studyFactory": "Study Factory",
+		"products": "Products",
+		"about": "About",
+		"researchLab": "Research Lab",
+		"contact": "Contact"
 	}
 }

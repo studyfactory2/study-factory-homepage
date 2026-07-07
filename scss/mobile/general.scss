@@ -1,17 +1,30 @@
 #mobile-wrap {
 	width: 100%;
 	min-height: 100vh;
-	background: $color-ink;
+	background: $cream;
 
-	.container {
-		position: relative;
-		width: calc(100% - 32px);
+	.mobile-page-hero {
+		width: $mobile-container;
 		margin: 0 auto;
-		display: flex;
-	}
+		padding: 126px 0 44px;
+		gap: 18px;
 
-	.layout-main {
-		width: 100%;
-		min-height: 100vh;
+		h1 {
+			font-size: 42px;
+			line-height: 1.06;
+			font-weight: 900;
+			letter-spacing: 0;
+		}
+
+		p {
+			color: $muted;
+			font-size: 15px;
+			line-height: 1.75;
+		}
+
+		strong {
+			color: $wine;
+			font-size: 14px;
+		}
 	}
 }

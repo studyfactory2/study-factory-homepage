@@ -1,16 +1,20 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
-  return (
-    <Html lang="ko">
-      <Head>
-        <meta name="theme-color" content="#111111" />
-        <meta name="format-detection" content="telephone=no" />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-}
+const Document = () => {
+	return (
+		<Html lang="ko">
+			<Head>
+				<meta name="theme-color" content="#101412" />
+				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+			</Head>
+			<body>
+				<Main />
+				<NextScript />
+			</body>
+		</Html>
+	);
+};
+
+export default Document;

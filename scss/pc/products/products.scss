@@ -1,0 +1,110 @@
+#pc-wrap {
+	.products-page,
+	.product-detail-page {
+		background: $cream;
+	}
+
+	.pc-products-page {
+		padding-bottom: 132px;
+
+		&__grid {
+			width: $pc-container;
+			margin: 0 auto;
+			gap: 24px;
+		}
+	}
+
+	.product-card {
+		position: relative;
+		display: flex;
+		flex: 1;
+		min-height: 330px;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 1px solid $line;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.56));
+		padding: 34px;
+		color: $ink;
+
+		&__body {
+			gap: 24px;
+		}
+
+		&__category {
+			color: #24495d;
+			font-size: 12px;
+			font-weight: 850;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+		}
+
+		&__name {
+			font-size: 30px;
+			line-height: 1.1;
+			font-weight: 900;
+		}
+
+		&__summary {
+			color: $muted;
+			font-size: 15px;
+			line-height: 1.8;
+		}
+
+		&__link {
+			gap: 8px;
+			color: $wine;
+			font-size: 13px;
+			font-weight: 850;
+		}
+	}
+
+	.pc-product-detail-page {
+		min-height: calc(100vh - 312px);
+
+		&__hero {
+			width: $pc-container;
+			margin: 0 auto;
+			padding: 170px 0 132px;
+			gap: 90px;
+
+			> .MuiStack-root:first-of-type {
+				max-width: 760px;
+				gap: 24px;
+			}
+
+			h1 {
+				font-size: 72px;
+				line-height: 1;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 18px;
+				line-height: 1.8;
+			}
+		}
+
+		&__panel {
+			width: 360px;
+			height: fit-content;
+			gap: 18px;
+			padding: 30px;
+			border: 1px solid $line;
+			background: $paper;
+
+			span {
+				color: $muted;
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+			}
+
+			strong {
+				font-size: 26px;
+				text-transform: capitalize;
+			}
+		}
+	}
+}

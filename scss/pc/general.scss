@@ -1,25 +1,57 @@
 #pc-wrap {
 	width: 100%;
 	min-height: 100vh;
-	background: $color-ink;
+	background: $cream;
 
-	.container {
-		position: relative;
-		width: $container-pc;
+	.pc-page-hero {
+		width: $pc-container;
 		margin: 0 auto;
-		display: flex;
+		padding: 170px 0 72px;
+		gap: 24px;
 
-		@media (max-width: 1380px) {
-			width: calc(100% - 80px);
+		h1 {
+			max-width: 880px;
+			font-size: 64px;
+			line-height: 1.02;
+			font-weight: 900;
+			letter-spacing: 0;
 		}
 
-		@media (max-width: 1024px) {
-			width: calc(100% - 48px);
+		p {
+			max-width: 680px;
+			color: $muted;
+			font-size: 18px;
+			line-height: 1.8;
+		}
+
+		strong {
+			color: $wine;
+			font-size: 16px;
 		}
 	}
 
-	.layout-main {
-		width: 100%;
-		min-height: 100vh;
+	.pc-section-head {
+		width: $pc-container;
+		margin: 0 auto;
+		gap: 18px;
+
+		h2 {
+			max-width: 780px;
+			font-size: 48px;
+			line-height: 1.08;
+			font-weight: 900;
+			letter-spacing: 0;
+		}
+
+		p {
+			max-width: 460px;
+			color: $muted;
+			font-size: 16px;
+			line-height: 1.8;
+		}
+
+		&--row {
+			align-items: flex-end;
+		}
 	}
 }

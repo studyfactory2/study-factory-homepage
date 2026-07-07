@@ -1,13 +1,21 @@
 /** IMPORTS **/
-@import "variables.scss";
-@import "reset.scss";
+@import 'variables.scss';
+@import 'reset.scss';
 
-@import "pc/general.scss";
-@import "pc/layout/top.scss";
-@import "pc/layout/footer.scss";
-@import "pc/homepage/homepage.scss";
+@import 'mui/index.scss';
 
-@import "mobile/general.scss";
-@import "mobile/layout/top.scss";
-@import "mobile/layout/footer.scss";
-@import "mobile/homepage/homepage.scss";
+@import 'pc/general.scss';
+@import 'pc/layout/top.scss';
+@import 'pc/layout/footer.scss';
+@import 'pc/homepage/homepage.scss';
+@import 'pc/products/products.scss';
+@import 'pc/about/about.scss';
+@import 'pc/contact/contact.scss';
+
+@import 'mobile/general.scss';
+@import 'mobile/layout/top.scss';
+@import 'mobile/layout/footer.scss';
+@import 'mobile/homepage/homepage.scss';
+@import 'mobile/products/products.scss';
+@import 'mobile/about/about.scss';
+@import 'mobile/contact/contact.scss';

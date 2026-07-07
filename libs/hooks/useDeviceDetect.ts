@@ -1,21 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-export type DeviceType = "mobile" | "pc";
+export type DeviceType = 'mobile' | 'desktop';
 
-const MOBILE_WIDTH = 767;
+const MOBILE_QUERY = '(max-width: 767px)';
+
+const getDevice = () => {
+	if (typeof window === 'undefined') {
+		return 'desktop';
+	}
+
+	return window.matchMedia(MOBILE_QUERY).matches ? 'mobile' : 'desktop';
+};
 
 const useDeviceDetect = (): DeviceType => {
-	const [device, setDevice] = useState<DeviceType>("pc");
+	const [device, setDevice] = useState<DeviceType>(getDevice);
 
 	useEffect(() => {
-		const checkDevice = () => {
-			setDevice(window.innerWidth <= MOBILE_WIDTH ? "mobile" : "pc");
+		const mediaQuery = window.matchMedia(MOBILE_QUERY);
+		const updateDevice = () => setDevice(mediaQuery.matches ? 'mobile' : 'desktop');
+
+		updateDevice();
+		mediaQuery.addEventListener('change', updateDevice);
+
+		return () => {
+			mediaQuery.removeEventListener('change', updateDevice);
 		};
-
-		checkDevice();
-		window.addEventListener("resize", checkDevice);
-
-		return () => window.removeEventListener("resize", checkDevice);
 	}, []);
 
 	return device;
