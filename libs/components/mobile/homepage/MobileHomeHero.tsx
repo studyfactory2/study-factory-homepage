@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ArrowButton from '../../common/buttons/ArrowButton';
 import { BRAND, MEDIA_ASSETS } from '../../../config';
 
 const MobileHomeHero = () => {
@@ -14,17 +14,16 @@ const MobileHomeHero = () => {
 			</Box>
 
 			<Stack className="mobile-home-hero__copy">
-				<Typography component="span" className="section-kicker">
-					{BRAND.englishName}
-				</Typography>
-				<Typography component="h1">공부만 남기는 공간</Typography>
-				<Typography component="p">성인 수험생의 하루를 좌석, 출석, 루틴, 상담으로 정렬합니다.</Typography>
 				<Typography component="strong">
 					{BRAND.sloganEn} · {BRAND.koreanName}
 				</Typography>
 				<Stack direction="row" className="mobile-home-hero__actions">
-					<ArrowButton href="/contact" label="상담 예약" />
-					<ArrowButton href="/about" label="둘러보기" variant="outlined" />
+					<Box component={Link} href="/contact" className="mobile-home-hero__link">
+						상담 예약
+					</Box>
+					<Box component={Link} href="/about" className="mobile-home-hero__link">
+						공간 둘러보기
+					</Box>
 				</Stack>
 			</Stack>
 		</Box>
