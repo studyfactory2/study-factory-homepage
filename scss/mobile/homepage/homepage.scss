@@ -99,33 +99,123 @@
 	}
 
 	.mobile-home-focus {
-		gap: 18px;
+		gap: 34px;
 
-		h2 {
-			margin-top: 14px;
-			font-size: 36px;
-			line-height: 1.08;
-			font-weight: 900;
-		}
+		&__story {
+			gap: 16px;
 
-		&__list {
-			margin-top: 28px;
-			gap: 12px;
-
-			> .MuiStack-root {
-				gap: 12px;
-				padding: 18px;
-				border: 1px solid $line;
-				background: rgba(255, 255, 255, 0.62);
+			h2 {
+				font-size: 36px;
+				line-height: 1.08;
+				font-weight: 900;
+				letter-spacing: 0;
 			}
 
-			svg {
+			p {
+				color: $ink-soft;
+				font-size: 15px;
+				line-height: 1.8;
+			}
+		}
+
+		&__statement {
+			gap: 14px;
+			padding: 24px;
+			border-top: 2px solid $gold;
+			background: rgba(255, 255, 255, 0.56);
+
+			span {
 				color: $forest;
+				font-size: 11px;
+				font-weight: 900;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
 			}
 
 			strong {
-				font-size: 16px;
-				font-weight: 850;
+				font-size: 24px;
+				line-height: 1.22;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 14px;
+				line-height: 1.7;
+			}
+		}
+
+		&__steps {
+			gap: 10px;
+		}
+
+		&__step {
+			gap: 14px;
+			padding: 18px;
+			border: 1px solid $line;
+			background: rgba(255, 255, 255, 0.54);
+
+			> span {
+				width: 34px;
+				color: $gold;
+				font-size: 13px;
+				font-weight: 900;
+			}
+
+			strong {
+				font-size: 18px;
+				font-weight: 900;
+			}
+
+			p {
+				margin-top: 6px;
+				color: $muted;
+				font-size: 13px;
+				line-height: 1.65;
+			}
+		}
+
+		&__audience {
+			gap: 16px;
+
+			h3 {
+				font-size: 30px;
+				line-height: 1.14;
+				font-weight: 900;
+				letter-spacing: 0;
+			}
+		}
+
+		&__exam-card {
+			gap: 12px;
+			padding: 20px;
+			border: 1px solid $line;
+			background: rgba(255, 255, 255, 0.56);
+
+			strong {
+				font-size: 20px;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 13px;
+				line-height: 1.65;
+			}
+		}
+
+		&__exam-tags {
+			flex-wrap: wrap;
+			gap: 7px;
+			margin-top: 4px;
+
+			span {
+				padding: 7px 10px;
+				border: 1px solid rgba(88, 113, 95, 0.24);
+				background: rgba(88, 113, 95, 0.08);
+				color: $forest;
+				font-size: 12px;
+				font-weight: 800;
 			}
 		}
 	}

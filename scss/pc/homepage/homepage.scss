@@ -122,34 +122,50 @@
 	.pc-home-focus {
 		background: $cream;
 
-		&__grid {
+		&__intro {
 			width: $pc-container;
-			margin: 58px auto 0;
-			gap: 24px;
+			margin: 0 auto;
+			gap: 80px;
+			align-items: flex-end;
 		}
 
-		&__card {
+		&__story {
 			flex: 1;
-			min-height: 310px;
-			padding: 34px;
 			gap: 22px;
-			border: 1px solid $line;
-			background: rgba(255, 255, 255, 0.62);
 
-			svg {
-				color: $forest;
+			h2 {
+				max-width: 720px;
+				font-size: 54px;
+				line-height: 1.08;
+				font-weight: 900;
+				letter-spacing: 0;
 			}
+
+			p {
+				max-width: 690px;
+				color: $ink-soft;
+				font-size: 18px;
+				line-height: 1.9;
+			}
+		}
+
+		&__statement {
+			width: 390px;
+			padding: 34px;
+			gap: 18px;
+			border-top: 2px solid $gold;
+			background: rgba(255, 255, 255, 0.52);
 
 			span {
 				color: $forest;
 				font-size: 12px;
-				font-weight: 850;
-				letter-spacing: 0.12em;
+				font-weight: 900;
+				letter-spacing: 0.14em;
 				text-transform: uppercase;
 			}
 
 			strong {
-				font-size: 28px;
+				font-size: 30px;
 				line-height: 1.24;
 				font-weight: 900;
 			}
@@ -158,6 +174,137 @@
 				color: $muted;
 				font-size: 15px;
 				line-height: 1.8;
+			}
+		}
+
+		&__system {
+			width: $pc-container;
+			margin: 92px auto 0;
+			gap: 28px;
+		}
+
+		&__system-head {
+			align-items: flex-end;
+			justify-content: space-between;
+			border-bottom: 1px solid $line;
+			padding-bottom: 22px;
+
+			span {
+				color: $forest;
+				font-size: 13px;
+				font-weight: 900;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+			}
+
+			p {
+				max-width: 390px;
+				color: $muted;
+				font-size: 15px;
+				line-height: 1.7;
+			}
+		}
+
+		&__steps {
+			gap: 14px;
+		}
+
+		&__step {
+			flex: 1;
+			min-height: 240px;
+			padding: 22px;
+			gap: 12px;
+			border: 1px solid $line;
+			background: rgba(255, 255, 255, 0.5);
+
+			span {
+				color: $gold;
+				font-size: 13px;
+				font-weight: 900;
+			}
+
+			em {
+				color: $forest;
+				font-size: 11px;
+				font-style: normal;
+				font-weight: 900;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+			}
+
+			strong {
+				margin-top: 8px;
+				font-size: 24px;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 14px;
+				line-height: 1.75;
+			}
+		}
+
+		&__audience {
+			width: $pc-container;
+			margin: 92px auto 0;
+			gap: 70px;
+			align-items: flex-start;
+		}
+
+		&__audience-copy {
+			width: 380px;
+			gap: 18px;
+
+			h3 {
+				font-size: 42px;
+				line-height: 1.12;
+				font-weight: 900;
+				letter-spacing: 0;
+			}
+
+			p {
+				color: $muted;
+				font-size: 16px;
+				line-height: 1.85;
+			}
+		}
+
+		&__exam-grid {
+			flex: 1;
+			gap: 18px;
+		}
+
+		&__exam-card {
+			padding: 28px;
+			gap: 14px;
+			border: 1px solid $line;
+			background: rgba(255, 255, 255, 0.56);
+
+			strong {
+				font-size: 25px;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 15px;
+				line-height: 1.75;
+			}
+		}
+
+		&__exam-tags {
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 8px;
+
+			span {
+				padding: 8px 12px;
+				border: 1px solid rgba(88, 113, 95, 0.24);
+				background: rgba(88, 113, 95, 0.08);
+				color: $forest;
+				font-size: 13px;
+				font-weight: 800;
 			}
 		}
 	}

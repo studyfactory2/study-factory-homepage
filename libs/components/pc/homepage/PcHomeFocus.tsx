@@ -1,45 +1,78 @@
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-const focusItems = [
-	{
-		kicker: 'Private Focus',
-		title: '공부만 남기는 공간',
-		body: '좌석, 조명, 콘센트, 온도, 소음까지 수험생이 신경 쓰지 않아도 되는 상태로 정리합니다.',
-	},
-	{
-		kicker: 'Daily Rhythm',
-		title: '흔들리지 않는 루틴',
-		body: '같은 시간에 도착하고, 같은 자리에서 시작하고, 작은 성취가 쌓이도록 흐름을 설계합니다.',
-	},
-	{
-		kicker: 'Adult Exams',
-		title: '성인 시험에 맞춘 분위기',
-		body: '자격증, 공무원, 전문직 시험을 준비하는 성인 수험생에게 맞는 차분한 밀도를 만듭니다.',
-	},
-];
+import { HOME_EXAM_GROUPS, HOME_SYSTEM_STEPS } from '../../../config';
 
 const PcHomeFocus = () => {
 	return (
 		<Box component="section" className="pc-home-focus">
-			<Stack className="pc-section-head">
-				<Typography component="span" className="section-kicker">
-					Study Factory
-				</Typography>
-				<Typography component="h2">수험생이 다시 집중하게 되는 순간을 설계합니다.</Typography>
+			<Stack direction="row" className="pc-home-focus__intro">
+				<Stack className="pc-home-focus__story">
+					<Typography component="span" className="section-kicker">
+						Study Operating System
+					</Typography>
+					<Typography component="h2">혼자 공부할 때 무너지는 것은 의지가 아니라 루틴입니다.</Typography>
+					<Typography component="p">
+						성인 수험생에게 필요한 것은 더 큰 자극이 아니라, 매일 같은 상태로 책상 앞에 앉을 수 있는 구조입니다.
+						자격증공장은 공간, 좌석, 출석, 공지, 상담을 하나의 흐름으로 정리합니다.
+					</Typography>
+				</Stack>
+
+				<Stack className="pc-home-focus__statement">
+					<Typography component="span">System over mood</Typography>
+					<Typography component="strong">공부 외의 결정을 줄입니다.</Typography>
+					<Typography component="p">
+						도착해서 어디에 앉을지, 오늘 무엇부터 정리할지, 운영 안내를 어디서 확인할지 고민하지 않도록
+						반복 가능한 하루의 구조를 만듭니다.
+					</Typography>
+				</Stack>
 			</Stack>
 
-			<Stack direction="row" className="pc-home-focus__grid">
-				{focusItems.map((item) => (
-					<Stack key={item.kicker} className="pc-home-focus__card">
-						<CheckCircleOutlineIcon />
-						<Typography component="span">{item.kicker}</Typography>
-						<Typography component="strong">{item.title}</Typography>
-						<Typography component="p">{item.body}</Typography>
-					</Stack>
-				))}
+			<Stack className="pc-home-focus__system">
+				<Stack direction="row" className="pc-home-focus__system-head">
+					<Typography component="span">Operating Flow</Typography>
+					<Typography component="p">공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다.</Typography>
+				</Stack>
+
+				<Stack direction="row" className="pc-home-focus__steps">
+					{HOME_SYSTEM_STEPS.map((step) => (
+						<Stack key={step.number} className="pc-home-focus__step">
+							<Typography component="span">{step.number}</Typography>
+							<Typography component="em">{step.label}</Typography>
+							<Typography component="strong">{step.title}</Typography>
+							<Typography component="p">{step.body}</Typography>
+						</Stack>
+					))}
+				</Stack>
+			</Stack>
+
+			<Stack direction="row" className="pc-home-focus__audience">
+				<Stack className="pc-home-focus__audience-copy">
+					<Typography component="span" className="section-kicker">
+						For Adult Exams
+					</Typography>
+					<Typography component="h3">긴 시험을 준비하는 성인 수험생을 위해</Typography>
+					<Typography component="p">
+						강의보다 생활 구조가 더 중요해지는 순간이 있습니다. 자격증공장은 그 순간을 버틸 수 있는 조용한
+						밀도와 운영 기준을 만듭니다.
+					</Typography>
+				</Stack>
+
+				<Stack className="pc-home-focus__exam-grid">
+					{HOME_EXAM_GROUPS.map((group) => (
+						<Stack key={group.title} className="pc-home-focus__exam-card">
+							<Typography component="strong">{group.title}</Typography>
+							<Typography component="p">{group.body}</Typography>
+							<Stack direction="row" className="pc-home-focus__exam-tags">
+								{group.exams.map((exam) => (
+									<Typography key={exam} component="span">
+										{exam}
+									</Typography>
+								))}
+							</Stack>
+						</Stack>
+					))}
+				</Stack>
 			</Stack>
 		</Box>
 	);

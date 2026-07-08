@@ -1,0 +1,69 @@
+export interface HomeSystemStep {
+	number: string;
+	label: string;
+	title: string;
+	body: string;
+}
+
+export interface HomeExamGroup {
+	title: string;
+	body: string;
+	exams: string[];
+}
+
+export const HOME_SYSTEM_STEPS: HomeSystemStep[] = [
+	{
+		number: '01',
+		label: 'Seat',
+		title: '좌석',
+		body: '도착하면 고민 없이 앉을 수 있는 자리와 공부 환경을 먼저 정리합니다.',
+	},
+	{
+		number: '02',
+		label: 'Attendance',
+		title: '출석',
+		body: '반복되는 출석 흐름으로 하루의 시작점을 흔들리지 않게 만듭니다.',
+	},
+	{
+		number: '03',
+		label: 'Routine',
+		title: '루틴',
+		body: '작은 반복이 이어지도록 공부 시간과 생활 리듬을 단단하게 잡습니다.',
+	},
+	{
+		number: '04',
+		label: 'Notice',
+		title: '공지',
+		body: '운영 안내와 변화는 빠르게 전달해 불필요한 혼란을 줄입니다.',
+	},
+	{
+		number: '05',
+		label: 'Consultation',
+		title: '상담',
+		body: '필요한 순간에 상태를 확인하고 다음 행동을 정리할 수 있게 돕습니다.',
+	},
+	{
+		number: '06',
+		label: 'Continuity',
+		title: '지속',
+		body: '오늘의 집중이 내일로 이어지도록 공간과 시스템을 함께 운영합니다.',
+	},
+];
+
+export const HOME_EXAM_GROUPS: HomeExamGroup[] = [
+	{
+		title: '전문직 시험',
+		body: '긴 호흡과 조용한 밀도가 필요한 시험을 준비하는 분들',
+		exams: ['변호사', '변리사', '회계사', '감정평가사', '세무사', '노무사'],
+	},
+	{
+		title: '임용 · 공무원 · 공기업',
+		body: '출석과 생활 루틴이 무너지면 다시 잡기 어려운 장기 수험생',
+		exams: ['임용고시', '공무원', '공기업'],
+	},
+	{
+		title: '자격증 · 이직 · 재도전',
+		body: '무엇을 공부할지는 알지만, 계속할 공간과 구조가 필요한 성인 수험생',
+		exams: ['자격증', '이직 준비', '장기 루틴'],
+	},
+];
