@@ -15,19 +15,15 @@ const PcHomeHero = () => {
 
 			<Stack className="pc-home-hero__container">
 				<Stack className="pc-home-hero__copy">
-					<Typography component="span" className="section-kicker">
-						{BRAND.englishName}
-					</Typography>
-					<Typography component="h1">{BRAND.sloganEn}</Typography>
-					<Typography component="strong">{BRAND.koreanName}</Typography>
-					<Typography component="p">
-						부산에서 시작하는 성인 수험생의 집중 루틴. 공간, 장비, 분위기, 시스템을 한 방향으로 정렬해
-						공부만 남깁니다.
+					<Typography component="h1">공부만 남기는 공간</Typography>
+					<Typography component="p">성인 수험생의 하루를 좌석, 출석, 루틴, 상담으로 정렬합니다.</Typography>
+					<Typography component="strong">
+						{BRAND.sloganEn} · {BRAND.koreanName}
 					</Typography>
 
 					<Stack direction="row" className="pc-home-hero__actions">
 						<ArrowButton href="/contact" label="상담 예약" />
-						<ArrowButton href="/products" label="Products" variant="outlined" />
+						<ArrowButton href="/about" label="공간 둘러보기" variant="outlined" />
 					</Stack>
 				</Stack>
 			</Stack>

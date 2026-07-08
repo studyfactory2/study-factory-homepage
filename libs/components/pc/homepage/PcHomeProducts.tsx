@@ -15,8 +15,8 @@ const PcHomeProducts = () => {
 					<Typography component="h2">공간의 운영 경험을 제품으로 확장합니다.</Typography>
 				</Stack>
 				<Typography component="p">
-					홈페이지, PWA, 내부 시스템을 직접 만들고 검증합니다. 우리 공간에서 필요한 도구를 먼저 만들고,
-					좋은 방식은 제품으로 확장합니다.
+					홈페이지, PWA, 내부 시스템을 직접 만들고 검증합니다. 우리 공간에서 필요한 도구를 먼저 만들고, 좋은 방식은
+					제품으로 확장합니다.
 				</Typography>
 			</Stack>
 
