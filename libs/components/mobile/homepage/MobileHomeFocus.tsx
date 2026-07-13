@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { HOME_EXAM_GROUPS, HOME_SYSTEM_STEPS } from '../../../config';
+import { HOME_SYSTEM_STEPS } from '../../../config';
 
 const MobileHomeFocus = () => {
 	return (
@@ -34,26 +34,6 @@ const MobileHomeFocus = () => {
 				))}
 			</Stack>
 
-			<Stack className="mobile-home-focus__audience">
-				<Typography component="span" className="section-kicker">
-					For Adult Exams
-				</Typography>
-				<Typography component="h3">긴 시험을 준비하는 성인 수험생을 위해</Typography>
-
-				{HOME_EXAM_GROUPS.map((group) => (
-					<Stack key={group.title} className="mobile-home-focus__exam-card">
-						<Typography component="strong">{group.title}</Typography>
-						<Typography component="p">{group.body}</Typography>
-						<Stack direction="row" className="mobile-home-focus__exam-tags">
-							{group.exams.map((exam) => (
-								<Typography key={exam} component="span">
-									{exam}
-								</Typography>
-							))}
-						</Stack>
-					</Stack>
-				))}
-			</Stack>
 		</Box>
 	);
 };

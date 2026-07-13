@@ -6,8 +6,9 @@ export const BRAND = {
 	sloganKo: '가능성의 증명',
 	sloganEn: 'The Proof of Potential',
 	location: 'Busan, South Korea',
-	email: 'hello@studyfactory.kr',
-	phone: '',
+	email: 'chingu713@studyfactorylab.com',
+	studyFactoryPhone: '051-757-5134',
+	researchLabPhone: '051-636-5134',
 } as const;
 
 export const EXAM_TYPES = [

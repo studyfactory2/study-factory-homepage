@@ -30,10 +30,20 @@ const PcFooter = () => {
 
 				<Stack className="pc-footer__contact">
 					<Typography component="span">Start a conversation</Typography>
-					<Link href="/contact">
+					<a href={`mailto:${BRAND.email}`}>
 						{BRAND.email}
 						<ArrowOutwardIcon fontSize="small" />
-					</Link>
+					</a>
+					<Stack className="pc-footer__phones">
+						<a href={`tel:${BRAND.studyFactoryPhone}`}>
+							<span>Study Factory</span>
+							{BRAND.studyFactoryPhone}
+						</a>
+						<a href={`tel:${BRAND.researchLabPhone}`}>
+							<span>Research Lab</span>
+							{BRAND.researchLabPhone}
+						</a>
+					</Stack>
 				</Stack>
 			</Stack>
 		</Box>

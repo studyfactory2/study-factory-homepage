@@ -3,6 +3,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import ProductDevicePreview from '../../common/homepage/ProductDevicePreview';
 import { HOME_PRODUCT_PROMOS } from '../../../config';
 
 const MobileHomeProducts = () => {
@@ -20,17 +21,7 @@ const MobileHomeProducts = () => {
 				{HOME_PRODUCT_PROMOS.map((promo) => (
 					<Box component={Link} href={promo.href} key={promo.slug} className="mobile-home-products__promo">
 						<Box className="mobile-home-products__visual" aria-hidden="true">
-							{promo.video ? (
-								<video autoPlay muted loop playsInline preload="metadata">
-									<source src={promo.video} type="video/mp4" />
-								</video>
-							) : (
-								<Stack className="mobile-home-products__visual-fallback">
-									<span />
-									<span />
-									<span />
-								</Stack>
-							)}
+							<ProductDevicePreview slug={promo.slug} />
 						</Box>
 
 						<Stack className="mobile-home-products__promo-copy">

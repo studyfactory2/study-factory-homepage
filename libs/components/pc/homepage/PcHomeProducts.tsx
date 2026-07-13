@@ -1,23 +1,10 @@
 import Link from 'next/link';
-import type { MouseEvent } from 'react';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import ProductDevicePreview from '../../common/homepage/ProductDevicePreview';
 import { HOME_PRODUCT_PROMOS } from '../../../config';
-
-const playPromoVideo = (event: MouseEvent<HTMLElement>) => {
-	const video = event.currentTarget.querySelector('video');
-	void video?.play();
-};
-
-const pausePromoVideo = (event: MouseEvent<HTMLElement>) => {
-	const video = event.currentTarget.querySelector('video');
-
-	if (!video) return;
-	video.pause();
-	video.currentTime = 0;
-};
 
 const PcHomeProducts = () => {
 	return (
@@ -42,21 +29,9 @@ const PcHomeProducts = () => {
 						href={promo.href}
 						key={promo.slug}
 						className="pc-home-products__promo"
-						onMouseEnter={playPromoVideo}
-						onMouseLeave={pausePromoVideo}
 					>
 						<Box className="pc-home-products__visual" aria-hidden="true">
-							{promo.video ? (
-								<video muted loop playsInline preload="metadata">
-									<source src={promo.video} type="video/mp4" />
-								</video>
-							) : (
-								<Stack className="pc-home-products__visual-fallback">
-									<span />
-									<span />
-									<span />
-								</Stack>
-							)}
+							<ProductDevicePreview slug={promo.slug} />
 						</Box>
 
 						<Stack className="pc-home-products__promo-copy">

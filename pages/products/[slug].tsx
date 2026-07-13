@@ -40,11 +40,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
 
 	return (
 		<>
-			<SeoHead
-				title={createPageTitle(product.name)}
-				path={`/products/${product.slug}`}
-				description={product.summary}
-			/>
+			<SeoHead title={createPageTitle(product.name)} path={`/products/${product.slug}`} description={product.summary} />
 			{device === 'mobile' ? <MobileProductDetailPage product={product} /> : <PcProductDetailPage product={product} />}
 		</>
 	);

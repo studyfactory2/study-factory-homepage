@@ -44,5 +44,27 @@
 			font-size: 18px;
 			font-weight: 850;
 		}
+
+		&__phones {
+			gap: 10px;
+			padding-top: 4px;
+
+			a {
+				display: flex;
+				gap: 10px;
+				color: rgba(248, 243, 234, 0.78);
+				font-size: 14px;
+				font-weight: 700;
+
+				span {
+					width: 104px;
+					color: rgba(248, 243, 234, 0.46);
+					font-size: 11px;
+					font-weight: 800;
+					letter-spacing: 0;
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 }

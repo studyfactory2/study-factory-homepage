@@ -81,7 +81,8 @@
 	}
 
 	.mobile-home-focus,
-	.mobile-home-products {
+	.mobile-home-products,
+	.mobile-home-audience {
 		padding: 72px 20px;
 	}
 
@@ -361,6 +362,487 @@
 				color: $cream;
 				font-size: 14px;
 				font-weight: 900;
+			}
+		}
+	}
+}
+
+#mobile-wrap {
+	.mobile-home-film {
+		height: auto;
+		min-height: 0;
+		max-height: none;
+		background: $background;
+		color: $ink;
+
+		&::after {
+			display: none;
+		}
+
+		&__media {
+			position: relative;
+			inset: auto;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			background: $night;
+
+			video {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+
+		&__copy {
+			position: relative;
+			height: auto;
+			gap: 13px;
+			padding: 28px 20px 72px;
+
+			> span {
+				color: $forest;
+				font-size: 11px;
+				font-weight: 800;
+			}
+
+			h2 {
+				color: $ink;
+				font-size: 31px;
+				line-height: 1.14;
+				font-weight: 900;
+			}
+
+			p {
+				max-width: none;
+				color: $muted;
+				font-size: 14px;
+				line-height: 1.75;
+			}
+		}
+
+		&__link {
+			width: fit-content;
+			padding-bottom: 7px;
+			border-bottom: 1px solid $ink;
+			color: $ink;
+			font-size: 14px;
+			font-weight: 800;
+		}
+
+		&--jagong-online {
+			.mobile-home-film__media video {
+				object-position: center;
+			}
+		}
+	}
+}
+
+#mobile-wrap {
+	.mobile-home-film {
+		position: relative;
+		height: 52svh;
+		min-height: 420px;
+		max-height: 560px;
+		overflow: hidden;
+		background: $night;
+		color: $paper;
+
+		&::after {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgba(5, 7, 6, 0.08), rgba(5, 7, 6, 0.82));
+			content: '';
+			pointer-events: none;
+		}
+
+		&__media {
+			position: absolute;
+			inset: 0;
+
+			video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		&__copy {
+			position: relative;
+			z-index: 1;
+			height: 100%;
+			justify-content: flex-end;
+			gap: 11px;
+			padding: 24px 20px 30px;
+
+			> span {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 11px;
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+
+			h2 {
+				font-size: 30px;
+				line-height: 1.13;
+				font-weight: 900;
+			}
+
+			p {
+				max-width: 350px;
+				color: rgba(255, 255, 255, 0.82);
+				font-size: 13px;
+				line-height: 1.72;
+			}
+		}
+
+		&--jagong-online {
+			.mobile-home-film__media video {
+				object-position: center 68%;
+			}
+		}
+
+		&__link {
+			display: inline-flex;
+			width: fit-content;
+			align-items: center;
+			gap: 8px;
+			padding-bottom: 7px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+			color: $paper;
+			font-size: 14px;
+			font-weight: 800;
+		}
+	}
+
+	.mobile-home-audience {
+		background: $background;
+
+		h2 {
+			margin-top: 14px;
+			font-size: 34px;
+			line-height: 1.12;
+			font-weight: 900;
+		}
+
+		&__intro {
+			margin-top: 16px;
+			color: $muted;
+			font-size: 15px;
+			line-height: 1.8;
+		}
+
+		&__exam-grid {
+			margin-top: 30px;
+			gap: 12px;
+		}
+
+		&__exam-card {
+			gap: 12px;
+			padding: 22px;
+			border: 1px solid $line;
+			background: $paper;
+
+			strong {
+				font-size: 20px;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 13px;
+				line-height: 1.68;
+			}
+		}
+
+		&__exam-tags {
+			flex-wrap: wrap;
+			gap: 7px;
+			margin-top: 4px;
+
+			span {
+				padding: 7px 10px;
+				border: 1px solid rgba(88, 113, 95, 0.2);
+				background: rgba(88, 113, 95, 0.06);
+				color: $forest;
+				font-size: 12px;
+				font-weight: 800;
+			}
+		}
+	}
+
+	.mobile-home-products {
+		background: $background;
+		color: $ink;
+
+		.section-kicker {
+			color: $forest;
+		}
+
+		h2 {
+			margin-top: 14px;
+			font-size: 34px;
+			line-height: 1.1;
+			font-weight: 900;
+		}
+
+		&__intro {
+			margin-top: 16px;
+			color: $muted;
+			font-size: 14px;
+			line-height: 1.75;
+		}
+
+		&__promos {
+			margin-top: 30px;
+			gap: 16px;
+		}
+
+		&__promo {
+			position: relative;
+			min-height: 0;
+			overflow: hidden;
+			border: 1px solid $line;
+			background: $paper;
+			color: $ink;
+		}
+
+		&__visual {
+			position: relative;
+			height: 255px;
+			inset: auto;
+			overflow: hidden;
+			background: $cream-deep;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&__promo-copy {
+			position: relative;
+			min-height: 0;
+			gap: 13px;
+			padding: 24px;
+
+			> span {
+				color: $gold;
+				font-size: 11px;
+				font-weight: 850;
+				text-transform: uppercase;
+			}
+
+			> strong {
+				color: $ink-soft;
+				font-size: 14px;
+				font-weight: 800;
+			}
+
+			h3 {
+				font-size: 29px;
+				line-height: 1.12;
+				font-weight: 900;
+			}
+
+			p {
+				color: $muted;
+				font-size: 14px;
+				line-height: 1.72;
+			}
+		}
+
+		&__cta {
+			gap: 8px;
+			margin-top: 6px;
+			color: $ink;
+			font-size: 14px;
+			font-weight: 850;
+		}
+
+		&__lab {
+			margin-top: 18px;
+			padding: 24px;
+			gap: 12px;
+			border: 1px solid $line;
+			background: $paper;
+
+			strong {
+				color: $forest;
+				font-size: 12px;
+				font-weight: 850;
+				text-transform: uppercase;
+			}
+
+			p {
+				color: $muted;
+				font-size: 14px;
+				line-height: 1.7;
+			}
+
+			a {
+				color: $ink;
+				font-size: 14px;
+				font-weight: 850;
+			}
+		}
+
+		.home-product-device {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&__phone {
+				position: relative;
+				width: 138px;
+				height: 226px;
+				padding: 9px;
+				border: 5px solid #242723;
+				border-radius: 22px;
+				background: #242723;
+				box-shadow: 14px 15px 0 rgba(17, 19, 18, 0.1);
+				transform: rotate(-7deg);
+			}
+
+			&__phone-speaker {
+				position: absolute;
+				top: 7px;
+				left: 50%;
+				width: 34px;
+				height: 4px;
+				border-radius: 4px;
+				background: rgba(255, 255, 255, 0.62);
+				transform: translateX(-50%);
+			}
+
+			&__phone-screen {
+				height: 100%;
+				gap: 8px;
+				padding: 18px 10px 10px;
+				border-radius: 14px;
+				background: #fbfaf7;
+			}
+
+			&__eyebrow,
+			&__headline,
+			&__rows span,
+			&__chips span,
+			&__dashboard-head span,
+			&__dashboard-list span,
+			&__dashboard-chart span {
+				display: block;
+				border-radius: 2px;
+				background: #d8d9d1;
+			}
+
+			&__eyebrow {
+				width: 46%;
+				height: 6px;
+			}
+
+			&__headline {
+				width: 72%;
+				height: 12px;
+				background: $forest;
+			}
+
+			&__rows {
+				gap: 6px;
+				margin-top: 5px;
+
+				span {
+					height: 28px;
+					background: #eeeee9;
+				}
+
+				span:nth-child(2) {
+					width: 82%;
+				}
+			}
+
+			&__chips {
+				gap: 6px;
+				margin-top: auto;
+
+				span {
+					width: 42%;
+					height: 15px;
+					background: rgba(184, 138, 74, 0.34);
+				}
+			}
+
+			&__tablet {
+				width: 300px;
+				height: 170px;
+				padding: 7px;
+				border: 5px solid #242723;
+				border-radius: 11px;
+				background: #242723;
+				box-shadow: 14px 15px 0 rgba(17, 19, 18, 0.1);
+				transform: rotate(4deg);
+			}
+
+			&__tablet-screen {
+				height: 100%;
+				gap: 9px;
+				padding: 11px;
+				border-radius: 5px;
+				background: #fbfaf7;
+			}
+
+			&__dashboard-head {
+				justify-content: space-between;
+
+				span:first-child {
+					width: 30%;
+					height: 8px;
+					background: $forest;
+				}
+
+				span:last-child {
+					width: 14%;
+					height: 8px;
+				}
+			}
+
+			&__dashboard-main {
+				flex: 1;
+				gap: 9px;
+			}
+
+			&__dashboard-list {
+				width: 42%;
+				gap: 6px;
+
+				span {
+					height: 17px;
+					background: #ebebe6;
+				}
+			}
+
+			&__dashboard-chart {
+				position: relative;
+				flex: 1;
+				padding: 10px;
+				justify-content: space-between;
+				background: #f1f0ea;
+
+				span:first-child {
+					width: 34px;
+					height: 34px;
+					border: 6px solid $gold;
+					border-radius: 50%;
+					background: transparent;
+				}
+
+				span:last-child {
+					width: 76%;
+					height: 8px;
+					background: $forest;
+				}
 			}
 		}
 	}

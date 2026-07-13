@@ -20,9 +20,20 @@ const MobileFooter = () => {
 				))}
 			</Stack>
 
-			<Link href="/contact" className="mobile-footer__email">
+			<a href={`mailto:${BRAND.email}`} className="mobile-footer__email">
 				{BRAND.email}
-			</Link>
+			</a>
+
+			<Stack className="mobile-footer__phones">
+				<a href={`tel:${BRAND.studyFactoryPhone}`}>
+					<span>Study Factory</span>
+					{BRAND.studyFactoryPhone}
+				</a>
+				<a href={`tel:${BRAND.researchLabPhone}`}>
+					<span>Research Lab</span>
+					{BRAND.researchLabPhone}
+				</a>
+			</Stack>
 		</Stack>
 	);
 };
