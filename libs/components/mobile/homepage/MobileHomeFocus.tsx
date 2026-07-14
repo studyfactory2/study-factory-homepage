@@ -1,7 +1,22 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { HOME_SYSTEM_STEPS } from '../../../config';
+import { HOME_SYSTEM_STEPS, type HomeSystemStep } from '../../../config';
+import useInViewOnce from '../../../hooks/useInViewOnce';
+
+const MobileSystemStep = ({ step }: { step: HomeSystemStep }) => {
+	const { ref, isInView } = useInViewOnce<HTMLDivElement>('0px 0px -6% 0px');
+
+	return (
+		<Stack ref={ref} direction="row" className={`mobile-home-focus__step${isInView ? ' is-visible' : ''}`}>
+			<Typography component="span">{step.number}</Typography>
+			<Stack>
+				<Typography component="strong">{step.title}</Typography>
+				<Typography component="p">{step.body}</Typography>
+			</Stack>
+		</Stack>
+	);
+};
 
 const MobileHomeFocus = () => {
 	return (
@@ -24,13 +39,7 @@ const MobileHomeFocus = () => {
 
 			<Stack className="mobile-home-focus__steps">
 				{HOME_SYSTEM_STEPS.map((step) => (
-					<Stack key={step.number} direction="row" className="mobile-home-focus__step">
-						<Typography component="span">{step.number}</Typography>
-						<Stack>
-							<Typography component="strong">{step.title}</Typography>
-							<Typography component="p">{step.body}</Typography>
-						</Stack>
-					</Stack>
+					<MobileSystemStep key={step.number} step={step} />
 				))}
 			</Stack>
 

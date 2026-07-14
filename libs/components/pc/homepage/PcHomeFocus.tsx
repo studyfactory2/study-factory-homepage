@@ -2,8 +2,11 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { HOME_SYSTEM_STEPS } from '../../../config';
+import useInViewOnce from '../../../hooks/useInViewOnce';
 
 const PcHomeFocus = () => {
+	const { ref: stepsRef, isInView: stepsAreVisible } = useInViewOnce<HTMLDivElement>();
+
 	return (
 		<Box component="section" className="pc-home-focus">
 			<Stack direction="row" className="pc-home-focus__intro">
@@ -34,7 +37,11 @@ const PcHomeFocus = () => {
 					<Typography component="p">공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다.</Typography>
 				</Stack>
 
-				<Stack direction="row" className="pc-home-focus__steps">
+				<Stack
+					ref={stepsRef}
+					direction="row"
+					className={`pc-home-focus__steps${stepsAreVisible ? ' is-visible' : ''}`}
+				>
 					{HOME_SYSTEM_STEPS.map((step) => (
 						<Stack key={step.number} className="pc-home-focus__step">
 							<Typography component="span">{step.number}</Typography>

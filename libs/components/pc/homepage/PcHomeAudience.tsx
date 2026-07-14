@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { HOME_EXAM_GROUPS } from '../../../config';
+import ExamMarquee from '../../common/homepage/ExamMarquee';
 
 const PcHomeAudience = () => {
 	return (
@@ -18,21 +18,7 @@ const PcHomeAudience = () => {
 					</Typography>
 				</Stack>
 
-				<Stack className="pc-home-audience__exam-grid">
-					{HOME_EXAM_GROUPS.map((group) => (
-						<Stack key={group.title} className="pc-home-audience__exam-card">
-							<Typography component="strong">{group.title}</Typography>
-							<Typography component="p">{group.body}</Typography>
-							<Stack direction="row" className="pc-home-audience__exam-tags">
-								{group.exams.map((exam) => (
-									<Typography key={exam} component="span">
-										{exam}
-									</Typography>
-								))}
-							</Stack>
-						</Stack>
-					))}
-				</Stack>
+				<ExamMarquee />
 			</Stack>
 		</Box>
 	);

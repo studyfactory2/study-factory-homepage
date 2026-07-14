@@ -193,12 +193,42 @@
 		}
 
 		&__step {
+			position: relative;
 			flex: 1;
 			min-height: 240px;
 			padding: 22px;
 			gap: 12px;
+			overflow: hidden;
 			border: 1px solid $line;
 			background: rgba(255, 255, 255, 0.5);
+			translate: 0 0;
+			transition:
+				translate 220ms ease,
+				border-color 220ms ease,
+				box-shadow 220ms ease;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: $gold;
+				content: '';
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 260ms ease;
+			}
+
+			&:hover {
+				border-color: rgba(184, 138, 74, 0.46);
+				box-shadow: 0 16px 34px rgba(17, 19, 18, 0.08);
+				translate: 0 -5px;
+
+				&::before {
+					transform: scaleX(1);
+				}
+			}
 
 			span {
 				color: $gold;
@@ -225,6 +255,16 @@
 				color: $muted;
 				font-size: 14px;
 				line-height: 1.75;
+			}
+		}
+
+		&__steps.is-visible &__step {
+			animation: home-step-reveal 540ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+
+			@for $index from 1 through 6 {
+				&:nth-child(#{$index}) {
+					animation-delay: #{($index - 1) * 80}ms;
+				}
 			}
 		}
 
@@ -578,8 +618,8 @@
 		&__container {
 			width: $pc-container;
 			margin: 0 auto;
-			gap: 96px;
-			align-items: flex-start;
+			gap: 72px;
+			align-items: center;
 		}
 
 		&__copy {
@@ -599,42 +639,9 @@
 			}
 		}
 
-		&__exam-grid {
+		.exam-marquee {
 			flex: 1;
-			gap: 16px;
-		}
-
-		&__exam-card {
-			gap: 14px;
-			padding: 30px;
-			border: 1px solid $line;
-			background: $paper;
-
-			strong {
-				font-size: 25px;
-				font-weight: 900;
-			}
-
-			p {
-				color: $muted;
-				font-size: 15px;
-				line-height: 1.75;
-			}
-		}
-
-		&__exam-tags {
-			flex-wrap: wrap;
-			gap: 8px;
-			margin-top: 6px;
-
-			span {
-				padding: 8px 11px;
-				border: 1px solid rgba(88, 113, 95, 0.2);
-				background: rgba(88, 113, 95, 0.06);
-				color: $forest;
-				font-size: 13px;
-				font-weight: 800;
-			}
+			min-width: 0;
 		}
 	}
 
