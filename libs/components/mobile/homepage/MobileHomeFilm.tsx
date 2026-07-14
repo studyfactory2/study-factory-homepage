@@ -19,14 +19,12 @@ const MobileHomeFilm = ({ film }: MobileHomeFilmProps) => {
 	return (
 		<Box component="section" className={`mobile-home-film mobile-home-film--${film.slug}`}>
 			<Box className="mobile-home-film__media" aria-hidden="true">
-				<video ref={videoRef} muted loop playsInline preload="none">
+				<video ref={videoRef} muted loop playsInline preload="metadata">
 					<source src={film.video} type="video/mp4" />
 				</video>
 			</Box>
 
 			<Stack className="mobile-home-film__copy">
-				<Typography component="span">{film.kicker}</Typography>
-				<Typography component="h2">{film.title}</Typography>
 				<Typography component="p">{film.body}</Typography>
 				<Box component={Link} href={film.href} className="mobile-home-film__link">
 					{film.cta}

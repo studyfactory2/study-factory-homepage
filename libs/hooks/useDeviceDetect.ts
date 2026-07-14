@@ -4,16 +4,8 @@ export type DeviceType = 'mobile' | 'desktop';
 
 const MOBILE_QUERY = '(max-width: 767px)';
 
-const getDevice = () => {
-	if (typeof window === 'undefined') {
-		return 'desktop';
-	}
-
-	return window.matchMedia(MOBILE_QUERY).matches ? 'mobile' : 'desktop';
-};
-
 const useDeviceDetect = (): DeviceType => {
-	const [device, setDevice] = useState<DeviceType>(getDevice);
+	const [device, setDevice] = useState<DeviceType>('desktop');
 
 	useEffect(() => {
 		const mediaQuery = window.matchMedia(MOBILE_QUERY);

@@ -19,16 +19,12 @@ const PcHomeFilm = ({ film }: PcHomeFilmProps) => {
 	return (
 		<Box component="section" className={`pc-home-film pc-home-film--${film.slug}`}>
 			<Box className="pc-home-film__media" aria-hidden="true">
-				<video ref={videoRef} muted loop playsInline preload="none">
+				<video ref={videoRef} muted loop playsInline preload="metadata">
 					<source src={film.video} type="video/mp4" />
 				</video>
 			</Box>
 
-			<Stack direction="row" className="pc-home-film__container">
-				<Stack className="pc-home-film__copy">
-					<Typography component="span">{film.kicker}</Typography>
-					<Typography component="h2">{film.title}</Typography>
-				</Stack>
+			<Stack className="pc-home-film__container">
 				<Stack className="pc-home-film__detail">
 					<Typography component="p">{film.body}</Typography>
 					<Box component={Link} href={film.href} className="pc-home-film__link">

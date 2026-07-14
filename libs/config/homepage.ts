@@ -28,8 +28,6 @@ export interface HomeProductPromo {
 
 export interface HomeFeatureFilm {
 	slug: 'study-factory' | 'jagong-online';
-	kicker: string;
-	title: string;
 	body: string;
 	href: string;
 	cta: string;
@@ -95,8 +93,6 @@ export const HOME_EXAM_GROUPS: HomeExamGroup[] = [
 
 export const HOME_STUDY_FACTORY_FILM: HomeFeatureFilm = {
 	slug: 'study-factory',
-	kicker: 'Study Factory Film',
-	title: '공부가 이어지는 하루를 만듭니다.',
 	body: '조용한 자리와 반복되는 출석, 필요한 순간의 상담까지. 장기 수험 생활이 흔들리지 않도록 하루의 구조를 운영합니다.',
 	href: '/about',
 	cta: '공간 둘러보기',
@@ -105,8 +101,6 @@ export const HOME_STUDY_FACTORY_FILM: HomeFeatureFilm = {
 
 export const HOME_JAGONG_ONLINE_FILM: HomeFeatureFilm = {
 	slug: 'jagong-online',
-	kicker: 'Jagong Online Film',
-	title: '공간 밖에서도 루틴은 이어집니다.',
 	body: '오늘의 출석과 집중을 온라인에서도 이어갈 수 있도록, 공부의 흐름을 놓치지 않는 제품을 만듭니다.',
 	href: '/products/jagong-online',
 	cta: 'Jagong Online 보기',
