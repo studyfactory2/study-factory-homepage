@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import type { NextPage } from 'next';
 import Stack from '@mui/material/Stack';
 import useDeviceDetect from '../../../hooks/useDeviceDetect';
@@ -11,16 +10,13 @@ import PcTop from '../../pc/layout/PcTop';
 const LayoutMain = <P extends object>(Component: NextPage<P>) => {
 	const WithLayout = (props: P) => {
 		const device = useDeviceDetect();
-		const router = useRouter();
 		const isMobile = device === 'mobile';
 
 		useEffect(() => {
 			if ('scrollRestoration' in window.history) {
-				window.history.scrollRestoration = 'manual';
+				window.history.scrollRestoration = 'auto';
 			}
-
-			window.scrollTo({ top: 0, left: 0 });
-		}, [router.asPath]);
+		}, []);
 
 		return (
 			<Stack id={isMobile ? 'mobile-wrap' : 'pc-wrap'}>

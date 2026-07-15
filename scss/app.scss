@@ -48,6 +48,16 @@
 	}
 }
 
+@keyframes pc-flow-rail-draw {
+	from {
+		transform: scaleX(0);
+	}
+
+	to {
+		transform: scaleX(1);
+	}
+}
+
 @keyframes mobile-flow-draw {
 	from {
 		stroke-dasharray: 1;
@@ -221,6 +231,11 @@
 
 	.pc-home-focus__step::before {
 		transition: none !important;
+	}
+
+	.pc-home-focus__steps::after {
+		transform: scaleX(1) !important;
+		animation: none !important;
 	}
 
 	.mobile-home-focus__flow-path path {

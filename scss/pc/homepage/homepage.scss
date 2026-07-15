@@ -108,7 +108,7 @@
 			flex-wrap: wrap;
 			margin: 0 auto;
 			gap: clamp(36px, 6vw, 80px);
-			align-items: flex-end;
+			align-items: center;
 		}
 
 		&__story {
@@ -117,7 +117,7 @@
 			gap: 22px;
 
 			h2 {
-				max-width: 720px;
+				max-width: 760px;
 				font-size: clamp(30px, 4vw, 54px);
 				line-height: 1.08;
 				font-weight: 900;
@@ -125,7 +125,7 @@
 			}
 
 			p {
-				max-width: 690px;
+				max-width: 650px;
 				color: $ink-soft;
 				font-size: clamp(15px, 1.4vw, 18px);
 				line-height: 1.9;
@@ -133,9 +133,9 @@
 		}
 
 		&__statement {
-			width: clamp(280px, 30vw, 390px);
+			width: clamp(270px, 26vw, 340px);
 			padding: clamp(24px, 2.6vw, 34px);
-			gap: 18px;
+			gap: 14px;
 			border-top: 2px solid $gold;
 			background: rgba(255, 255, 255, 0.52);
 
@@ -153,11 +153,6 @@
 				font-weight: 900;
 			}
 
-			p {
-				color: $muted;
-				font-size: 15px;
-				line-height: 1.8;
-			}
 		}
 
 		&__system {
@@ -189,15 +184,38 @@
 		}
 
 		&__steps {
+			position: relative;
 			gap: 14px;
+			padding-top: 14px;
+
+			&::before,
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				content: '';
+			}
+
+			&::before {
+				background: rgba(184, 138, 74, 0.16);
+			}
+
+			&::after {
+				background: linear-gradient(90deg, $gold, #e6b96e, $gold);
+				box-shadow: 0 0 12px rgba(184, 138, 74, 0.42);
+				transform: scaleX(0);
+				transform-origin: left;
+			}
 		}
 
 		&__step {
 			position: relative;
 			flex: 1;
-			min-height: 240px;
-			padding: 22px;
-			gap: 12px;
+			min-height: 178px;
+			padding: 20px;
+			gap: 14px;
 			overflow: hidden;
 			border: 1px solid $line;
 			background: rgba(255, 255, 255, 0.5);
@@ -205,6 +223,7 @@
 			transition:
 				translate 220ms ease,
 				border-color 220ms ease,
+				background 220ms ease,
 				box-shadow 220ms ease;
 
 			&::before {
@@ -222,48 +241,84 @@
 
 			&:hover {
 				border-color: rgba(184, 138, 74, 0.46);
+				background: rgba(255, 255, 255, 0.84);
 				box-shadow: 0 16px 34px rgba(17, 19, 18, 0.08);
-				translate: 0 -5px;
+				translate: 0 -6px;
 
 				&::before {
 					transform: scaleX(1);
 				}
-			}
 
-			span {
-				color: $gold;
-				font-size: 13px;
-				font-weight: 900;
-			}
+				.pc-home-focus__step-meta span {
+					border-color: $gold;
+					background: $gold;
+					color: #fff;
+					box-shadow: 0 0 14px rgba(184, 138, 74, 0.32);
+				}
 
-			em {
-				color: $forest;
-				font-size: 11px;
-				font-style: normal;
-				font-weight: 900;
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
+				strong,
+				p {
+					transform: translateY(-2px);
+				}
 			}
 
 			strong {
-				margin-top: 8px;
-				font-size: 24px;
+				font-size: 22px;
 				font-weight: 900;
+				transition: transform 220ms ease;
 			}
 
 			p {
 				color: $muted;
-				font-size: 14px;
-				line-height: 1.75;
+				font-size: 13px;
+				line-height: 1.6;
+				transition: transform 220ms ease;
 			}
 		}
 
-		&__steps.is-visible &__step {
-			animation: home-step-reveal 540ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+		&__step-meta {
+			gap: 10px;
 
-			@for $index from 1 through 6 {
-				&:nth-child(#{$index}) {
-					animation-delay: #{($index - 1) * 80}ms;
+			span {
+				display: inline-flex;
+				width: 34px;
+				height: 34px;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid rgba(184, 138, 74, 0.52);
+				border-radius: 50%;
+				color: $gold;
+				font-size: 11px;
+				font-weight: 900;
+				transition:
+					border-color 220ms ease,
+					background 220ms ease,
+					color 220ms ease,
+					box-shadow 220ms ease;
+			}
+
+			em {
+				color: $forest;
+				font-size: 10px;
+				font-style: normal;
+				font-weight: 900;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+		}
+
+		&__steps.is-visible {
+			&::after {
+				animation: pc-flow-rail-draw 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+			}
+
+			.pc-home-focus__step {
+				animation: home-step-reveal 580ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+
+				@for $index from 1 through 6 {
+					&:nth-child(#{$index}) {
+						animation-delay: #{($index - 1) * 110 + 120}ms;
+					}
 				}
 			}
 		}
@@ -645,7 +700,7 @@
 		}
 
 		&--jagong-online {
-			height: clamp(580px, 56vw, 760px);
+			height: clamp(700px, 64vw, 900px);
 
 			.pc-home-film__media {
 				width: 700px;
@@ -673,13 +728,13 @@
 		&__container {
 			width: $pc-container;
 			margin: 0 auto;
-			gap: 72px;
+			gap: clamp(72px, 8vw, 140px);
 			align-items: center;
 		}
 
 		&__copy {
-			width: 400px;
-			gap: 18px;
+			width: clamp(340px, 31vw, 420px);
+			gap: 24px;
 
 			h2 {
 				font-size: 46px;
@@ -697,6 +752,11 @@
 		.exam-marquee {
 			flex: 1;
 			min-width: 0;
+			gap: 42px;
+
+			&__lane {
+				gap: 16px;
+			}
 		}
 	}
 
