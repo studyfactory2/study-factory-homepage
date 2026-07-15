@@ -589,6 +589,61 @@
 			font-weight: 800;
 		}
 
+		&__sound.MuiIconButton-root {
+			position: absolute;
+			right: max(24px, calc((100% - #{$pc-container}) / 2));
+			bottom: 28px;
+			z-index: 3;
+			width: 48px;
+			height: 48px;
+			border: 1px solid rgba(255, 255, 255, 0.38);
+			background: rgba(5, 7, 6, 0.68);
+			color: $paper;
+			backdrop-filter: blur(10px);
+
+			&:hover {
+				background: rgba(5, 7, 6, 0.86);
+			}
+		}
+
+		&__video-cta {
+			position: absolute;
+			top: 28px;
+			left: max(24px, calc((100% - #{$pc-container}) / 2));
+			z-index: 3;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 11px 15px;
+			border: 1px solid rgba(255, 255, 255, 0.34);
+			background: rgba(5, 7, 6, 0.68);
+			color: $paper;
+			font-size: 14px;
+			font-weight: 850;
+			backdrop-filter: blur(10px);
+			transition:
+				background 180ms ease,
+				border-color 180ms ease;
+
+			&:hover {
+				border-color: rgba(255, 255, 255, 0.56);
+				background: rgba(5, 7, 6, 0.86);
+			}
+		}
+
+		&--study-factory {
+			height: clamp(760px, 52vw, 920px);
+
+			&::after {
+				display: none;
+			}
+
+			.pc-home-film__media video {
+				object-fit: contain;
+				object-position: center;
+			}
+		}
+
 		&--jagong-online {
 			height: clamp(580px, 56vw, 760px);
 

@@ -9,7 +9,7 @@ const MobileHomeHero = () => {
 		<Box component="section" className="mobile-home-hero">
 			<Box className="mobile-home-hero__media" aria-hidden="true">
 				<video autoPlay muted loop playsInline preload="metadata">
-					<source src={MEDIA_ASSETS.heroVideo} type="video/mp4" />
+					<source src={MEDIA_ASSETS.heroVideoMobile} type="video/mp4" />
 				</video>
 			</Box>
 

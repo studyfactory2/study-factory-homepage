@@ -25,8 +25,8 @@ const PcHomeFocus = () => {
 					<Typography component="span">System over mood</Typography>
 					<Typography component="strong">공부 외의 결정을 줄입니다.</Typography>
 					<Typography component="p">
-						도착해서 어디에 앉을지, 오늘 무엇부터 정리할지, 운영 안내를 어디서 확인할지 고민하지 않도록
-						반복 가능한 하루의 구조를 만듭니다.
+						도착해서 어디에 앉을지, 오늘 무엇부터 정리할지, 운영 안내를 어디서 확인할지 고민하지 않도록 반복 가능한
+						하루의 구조를 만듭니다.
 					</Typography>
 				</Stack>
 			</Stack>
@@ -37,11 +37,7 @@ const PcHomeFocus = () => {
 					<Typography component="p">공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다.</Typography>
 				</Stack>
 
-				<Stack
-					ref={stepsRef}
-					direction="row"
-					className={`pc-home-focus__steps${stepsAreVisible ? ' is-visible' : ''}`}
-				>
+				<Stack ref={stepsRef} direction="row" className={`pc-home-focus__steps${stepsAreVisible ? ' is-visible' : ''}`}>
 					{HOME_SYSTEM_STEPS.map((step) => (
 						<Stack key={step.number} className="pc-home-focus__step">
 							<Typography component="span">{step.number}</Typography>
@@ -52,7 +48,6 @@ const PcHomeFocus = () => {
 					))}
 				</Stack>
 			</Stack>
-
 		</Box>
 	);
 };

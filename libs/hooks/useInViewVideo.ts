@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
-const useInViewVideo = (videoRef: RefObject<HTMLVideoElement | null>) => {
+const useInViewVideo = (videoRef: RefObject<HTMLVideoElement | null>, enabled = true) => {
 	useEffect(() => {
 		const video = videoRef.current;
 
-		if (!video || typeof IntersectionObserver === 'undefined') return;
+		if (!enabled || !video || typeof IntersectionObserver === 'undefined') return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -22,7 +22,7 @@ const useInViewVideo = (videoRef: RefObject<HTMLVideoElement | null>) => {
 		observer.observe(video);
 
 		return () => observer.disconnect();
-	}, [videoRef]);
+	}, [enabled, videoRef]);
 };
 
 export default useInViewVideo;

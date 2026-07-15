@@ -13,8 +13,8 @@ const PcHomeAudience = () => {
 					</Typography>
 					<Typography component="h2">긴 시험을 준비하는 성인 수험생을 위해</Typography>
 					<Typography component="p">
-						강의보다 생활 구조가 더 중요해지는 순간이 있습니다. 자격증공장은 그 순간을 버틸 수 있는 조용한
-						밀도와 운영 기준을 만듭니다.
+						강의보다 생활 구조가 더 중요해지는 순간이 있습니다. 자격증공장은 그 순간을 버틸 수 있는 조용한 밀도와 운영
+						기준을 만듭니다.
 					</Typography>
 				</Stack>
 
