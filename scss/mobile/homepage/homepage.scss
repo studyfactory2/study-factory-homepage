@@ -87,14 +87,14 @@
 	}
 
 	.mobile-home-focus {
-		gap: 34px;
+		gap: 36px;
 
 		&__story {
-			gap: 16px;
+			gap: 21px;
 
 			h2 {
 				font-size: 36px;
-				line-height: 1.08;
+				line-height: 1.14;
 				font-weight: 900;
 				letter-spacing: 0;
 			}
@@ -102,13 +102,13 @@
 			p {
 				color: $ink-soft;
 				font-size: 15px;
-				line-height: 1.8;
+				line-height: 1.9;
 			}
 		}
 
 		&__statement {
-			gap: 14px;
-			padding: 24px;
+			gap: 16px;
+			padding: 24px 20px;
 			border-top: 2px solid $gold;
 			background: rgba(255, 255, 255, 0.56);
 
@@ -122,48 +122,162 @@
 
 			strong {
 				font-size: 24px;
-				line-height: 1.22;
+				line-height: 1.3;
 				font-weight: 900;
 			}
 
 			p {
 				color: $muted;
 				font-size: 14px;
-				line-height: 1.7;
+				line-height: 1.82;
 			}
 		}
 
-		&__steps {
+		&__flow {
+			gap: 22px;
+			padding-top: 4px;
+		}
+
+		&__flow-label {
+			color: $forest;
+			font-size: 11px;
+			font-weight: 900;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+		}
+
+		&__flow-canvas {
+			position: relative;
+			min-height: 190px;
+		}
+
+		&__flow-path {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 150px;
+			overflow: visible;
+			pointer-events: none;
+
+			path {
+				fill: none;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+				vector-effect: non-scaling-stroke;
+			}
+		}
+
+		&__flow-path-base {
+			stroke: rgba(184, 126, 48, 0.46);
+		}
+
+		&__flow-path-pulse {
+			stroke: #dca34c;
+			stroke-width: 3 !important;
+			stroke-dasharray: 0.12 0.88;
+			stroke-dashoffset: 1;
+			opacity: 0;
+			filter: drop-shadow(0 0 4px rgba(220, 163, 76, 0.86));
+		}
+
+		&__flow-node {
+			position: absolute;
+			z-index: 1;
+			width: 30%;
 			gap: 10px;
-		}
 
-		&__step {
-			gap: 14px;
-			padding: 18px;
-			border: 1px solid $line;
-			background: rgba(255, 255, 255, 0.54);
-
-			&.is-visible {
-				animation: home-step-reveal-mobile 480ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+			&[data-step='01'],
+			&[data-step='02'],
+			&[data-step='03'] {
+				top: 0;
 			}
 
-			> span {
-				width: 34px;
-				color: $gold;
-				font-size: 13px;
-				font-weight: 900;
+			&[data-step='04'],
+			&[data-step='05'],
+			&[data-step='06'] {
+				top: 114px;
+			}
+
+			&[data-step='01'],
+			&[data-step='06'] {
+				left: 0;
+				align-items: flex-start;
+				padding-left: 12px;
+				text-align: left;
+			}
+
+			&[data-step='03'],
+			&[data-step='04'] {
+				right: 0;
+				align-items: flex-end;
+				padding-right: 12px;
+				text-align: right;
+			}
+
+			&[data-step='02'],
+			&[data-step='05'] {
+				left: 35%;
+				align-items: center;
+				text-align: center;
 			}
 
 			strong {
-				font-size: 18px;
+				position: relative;
+				z-index: 2;
+				font-size: 17px;
+				line-height: 1.15;
 				font-weight: 900;
 			}
 
-			p {
-				margin-top: 6px;
-				color: $muted;
-				font-size: 13px;
-				line-height: 1.65;
+			&[data-step='03'] strong {
+				padding: 0 5px;
+				background: $background;
+				box-shadow: 0 0 0 3px $background;
+			}
+		}
+
+		&__flow-number {
+			display: inline-flex;
+			width: 36px;
+			height: 36px;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid $gold;
+			border-radius: 50%;
+			background: $background;
+			color: $gold;
+			font-size: 11px;
+			font-weight: 900;
+			box-shadow: 0 0 0 6px $background;
+		}
+
+		&__flow.is-visible {
+			.mobile-home-focus__flow-path-base {
+				animation: mobile-flow-draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) 160ms backwards;
+			}
+
+			.mobile-home-focus__flow-path-pulse {
+				animation: mobile-flow-pulse 4.8s linear 1.6s infinite;
+			}
+
+			.mobile-home-focus__flow-node {
+				animation: home-step-reveal-mobile 420ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+
+				@for $index from 1 through 6 {
+					&[data-step='0#{$index}'] {
+						animation-delay: #{($index - 1) * 240 + 140}ms;
+
+						.mobile-home-focus__flow-number {
+							animation-delay: #{($index - 1) * 0.72 + 1.6}s;
+						}
+					}
+				}
+			}
+
+			.mobile-home-focus__flow-number {
+				animation: mobile-flow-node-pulse 4.8s ease-in-out infinite;
 			}
 		}
 

@@ -48,6 +48,55 @@
 	}
 }
 
+@keyframes mobile-flow-draw {
+	from {
+		stroke-dasharray: 1;
+		stroke-dashoffset: 1;
+	}
+
+	to {
+		stroke-dasharray: 1;
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes mobile-flow-pulse {
+	0% {
+		stroke-dashoffset: 1;
+		opacity: 0;
+	}
+
+	8%,
+	88% {
+		opacity: 1;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes mobile-flow-node-pulse {
+	0%,
+	18%,
+	100% {
+		border-color: $gold;
+		background: $background;
+		color: $gold;
+		box-shadow: 0 0 0 6px $background;
+		transform: scale(1);
+	}
+
+	8% {
+		border-color: #dca34c;
+		background: #dca34c;
+		color: #fff;
+		box-shadow: 0 0 0 6px $background, 0 0 18px rgba(220, 163, 76, 0.72);
+		transform: scale(1.08);
+	}
+}
+
 @keyframes exam-marquee-forward {
 	from {
 		transform: translateX(0);
@@ -142,7 +191,8 @@
 
 @media (prefers-reduced-motion: reduce) {
 	.pc-home-focus__step,
-	.mobile-home-focus__step {
+	.mobile-home-focus__step,
+	.mobile-home-focus__flow-node {
 		opacity: 1 !important;
 		translate: none !important;
 		transform: none !important;
@@ -152,6 +202,12 @@
 
 	.pc-home-focus__step::before {
 		transition: none !important;
+	}
+
+	.mobile-home-focus__flow-path path {
+		stroke-dasharray: none !important;
+		stroke-dashoffset: 0 !important;
+		animation: none !important;
 	}
 
 	.exam-marquee__track {

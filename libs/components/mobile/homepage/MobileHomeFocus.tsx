@@ -1,24 +1,12 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { HOME_SYSTEM_STEPS, type HomeSystemStep } from '../../../config';
+import { HOME_SYSTEM_STEPS } from '../../../config';
 import useInViewOnce from '../../../hooks/useInViewOnce';
 
-const MobileSystemStep = ({ step }: { step: HomeSystemStep }) => {
-	const { ref, isInView } = useInViewOnce<HTMLDivElement>('0px 0px -6% 0px');
-
-	return (
-		<Stack ref={ref} direction="row" className={`mobile-home-focus__step${isInView ? ' is-visible' : ''}`}>
-			<Typography component="span">{step.number}</Typography>
-			<Stack>
-				<Typography component="strong">{step.title}</Typography>
-				<Typography component="p">{step.body}</Typography>
-			</Stack>
-		</Stack>
-	);
-};
-
 const MobileHomeFocus = () => {
+	const { ref: flowRef, isInView: flowIsVisible } = useInViewOnce<HTMLDivElement>('0px 0px -8% 0px');
+
 	return (
 		<Box component="section" className="mobile-home-focus">
 			<Stack className="mobile-home-focus__story">
@@ -37,10 +25,26 @@ const MobileHomeFocus = () => {
 				<Typography component="p">좌석, 출석, 루틴, 공지, 상담이 하나의 흐름으로 이어집니다.</Typography>
 			</Stack>
 
-			<Stack className="mobile-home-focus__steps">
-				{HOME_SYSTEM_STEPS.map((step) => (
-					<MobileSystemStep key={step.number} step={step} />
-				))}
+			<Stack ref={flowRef} className={`mobile-home-focus__flow${flowIsVisible ? ' is-visible' : ''}`}>
+				<Typography component="span" className="mobile-home-focus__flow-label">
+					Operating flow
+				</Typography>
+
+				<Box className="mobile-home-focus__flow-canvas">
+					<svg className="mobile-home-focus__flow-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+						<path className="mobile-home-focus__flow-path-base" pathLength="1" d="M 8 12 H 92 V 88 H 8" />
+						<path className="mobile-home-focus__flow-path-pulse" pathLength="1" d="M 8 12 H 92 V 88 H 8" />
+					</svg>
+
+					{HOME_SYSTEM_STEPS.map((step) => (
+						<Stack key={step.number} data-step={step.number} className="mobile-home-focus__flow-node">
+							<Typography component="span" className="mobile-home-focus__flow-number">
+								{step.number}
+							</Typography>
+							<Typography component="strong">{step.title}</Typography>
+						</Stack>
+					))}
+				</Box>
 			</Stack>
 
 		</Box>
