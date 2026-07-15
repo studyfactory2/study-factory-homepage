@@ -3,8 +3,49 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ProductDevicePreview from '../../common/homepage/ProductDevicePreview';
-import { HOME_PRODUCT_PROMOS } from '../../../config';
+import ProductBrandVisual from '../../common/homepage/ProductBrandVisual';
+import { HOME_PRODUCT_PROMOS, type HomeProductPromo } from '../../../config';
+import useInViewOnce from '../../../hooks/useInViewOnce';
+
+const MobileProductPromo = ({ promo }: { promo: HomeProductPromo }) => {
+	const { ref, isInView } = useInViewOnce<HTMLAnchorElement>('0px 0px -8% 0px');
+
+	return (
+		<Box
+			ref={ref}
+			component={Link}
+			href={promo.href}
+			className={`mobile-home-products__promo${isInView ? ' is-visible' : ''}`}
+		>
+			<Box
+				className={`mobile-home-products__visual mobile-home-products__visual--${promo.slug}`}
+				aria-hidden="true"
+			>
+				<ProductBrandVisual slug={promo.slug} />
+			</Box>
+
+			<Stack className="mobile-home-products__promo-copy">
+				<Typography component="span">{promo.kicker}</Typography>
+				<Typography component="strong">{promo.name}</Typography>
+				<Typography component="h3">{promo.title}</Typography>
+				<Typography component="p">{promo.body}</Typography>
+
+				<Stack direction="row" className="mobile-home-products__points">
+					{promo.points.map((point) => (
+						<Typography key={point} component="em">
+							{point}
+						</Typography>
+					))}
+				</Stack>
+
+				<Stack direction="row" alignItems="center" className="mobile-home-products__cta">
+					{promo.cta}
+					<ArrowOutwardIcon fontSize="small" />
+				</Stack>
+			</Stack>
+		</Box>
+	);
+};
 
 const MobileHomeProducts = () => {
 	return (
@@ -19,23 +60,7 @@ const MobileHomeProducts = () => {
 
 			<Stack className="mobile-home-products__promos">
 				{HOME_PRODUCT_PROMOS.map((promo) => (
-					<Box component={Link} href={promo.href} key={promo.slug} className="mobile-home-products__promo">
-						<Box className="mobile-home-products__visual" aria-hidden="true">
-							<ProductDevicePreview slug={promo.slug} />
-						</Box>
-
-						<Stack className="mobile-home-products__promo-copy">
-							<Typography component="span">{promo.kicker}</Typography>
-							<Typography component="strong">{promo.name}</Typography>
-							<Typography component="h3">{promo.title}</Typography>
-							<Typography component="p">{promo.body}</Typography>
-
-							<Stack direction="row" alignItems="center" className="mobile-home-products__cta">
-								{promo.cta}
-								<ArrowOutwardIcon fontSize="small" />
-							</Stack>
-						</Stack>
-					</Box>
+					<MobileProductPromo key={promo.slug} promo={promo} />
 				))}
 			</Stack>
 

@@ -3,7 +3,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ProductDevicePreview from '../../common/homepage/ProductDevicePreview';
+import ProductBrandVisual from '../../common/homepage/ProductBrandVisual';
 import { HOME_PRODUCT_PROMOS } from '../../../config';
 
 const PcHomeProducts = () => {
@@ -17,26 +17,28 @@ const PcHomeProducts = () => {
 					<Typography component="h2">운영 경험을 제품으로 확장합니다.</Typography>
 				</Stack>
 				<Typography component="p">
-					공간에서 반복되는 예약, 출석, 상담, 루틴 문제를 직접 겪고 제품으로 만듭니다. Research Lab은 운영을 아는
-					제품 개발 스튜디오입니다.
+					공간에서 반복되는 예약, 출석, 상담, 루틴 문제를 직접 겪고 제품으로 만듭니다. Research Lab은 운영을 아는 제품
+					개발 스튜디오입니다.
 				</Typography>
 			</Stack>
 
-			<Stack direction="row" className="pc-home-products__promos">
+			<Stack className="pc-home-products__promos">
 				{HOME_PRODUCT_PROMOS.map((promo) => (
 					<Box
 						component={Link}
 						href={promo.href}
 						key={promo.slug}
-						className="pc-home-products__promo"
+						className={`pc-home-products__promo pc-home-products__promo--${promo.slug}`}
 					>
-						<Box className="pc-home-products__visual" aria-hidden="true">
-							<ProductDevicePreview slug={promo.slug} />
+						<Box className={`pc-home-products__visual pc-home-products__visual--${promo.slug}`} aria-hidden="true">
+							<ProductBrandVisual slug={promo.slug} />
 						</Box>
 
 						<Stack className="pc-home-products__promo-copy">
-							<Typography component="span">{promo.kicker}</Typography>
-							<Typography component="strong">{promo.name}</Typography>
+							<Stack direction="row" alignItems="center" className="pc-home-products__meta">
+								<Typography component="span">{promo.kicker}</Typography>
+								<Typography component="strong">{promo.name}</Typography>
+							</Stack>
 							<Typography component="h3">{promo.title}</Typography>
 							<Typography component="p">{promo.body}</Typography>
 

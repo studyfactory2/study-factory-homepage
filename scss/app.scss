@@ -97,6 +97,18 @@
 	}
 }
 
+@keyframes home-product-brand-reveal {
+	from {
+		opacity: 0;
+		transform: translateY(12px) scale(0.94);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
 @keyframes exam-marquee-forward {
 	from {
 		transform: translateX(0);
@@ -197,6 +209,13 @@
 		translate: none !important;
 		transform: none !important;
 		transition: none !important;
+		animation: none !important;
+	}
+
+	.mobile-home-products__promo,
+	.mobile-home-products__promo .home-product-brand__logo {
+		opacity: 1 !important;
+		transform: none !important;
 		animation: none !important;
 	}
 

@@ -349,8 +349,8 @@
 		}
 
 		&__promos {
-			margin-top: 30px;
-			gap: 16px;
+			margin-top: 32px;
+			gap: 24px;
 		}
 
 		&__promo {
@@ -660,9 +660,20 @@
 			position: relative;
 			min-height: 0;
 			overflow: hidden;
-			border: 1px solid $line;
+			border: 1px solid rgba(17, 19, 18, 0.06);
+			border-radius: 18px;
 			background: $paper;
 			color: $ink;
+			opacity: 0;
+			box-shadow: 0 12px 30px rgba(17, 19, 18, 0.045);
+
+			&.is-visible {
+				animation: home-step-reveal-mobile 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+
+				.home-product-brand__logo {
+					animation: home-product-brand-reveal 720ms cubic-bezier(0.22, 1, 0.36, 1) 140ms backwards;
+				}
+			}
 		}
 
 		&__visual {
@@ -677,16 +688,68 @@
 			}
 		}
 
+		&__visual--study-factory-app {
+			background:
+				repeating-linear-gradient(
+					135deg,
+					rgba(255, 255, 255, 0.025) 0,
+					rgba(255, 255, 255, 0.025) 13px,
+					rgba(255, 255, 255, 0.07) 13px,
+					rgba(255, 255, 255, 0.07) 26px
+				),
+				#2f8588;
+		}
+
+		&__visual--jagong-online {
+			background:
+				repeating-linear-gradient(
+					135deg,
+					rgba(184, 138, 74, 0.015) 0,
+					rgba(184, 138, 74, 0.015) 13px,
+					rgba(184, 138, 74, 0.05) 13px,
+					rgba(184, 138, 74, 0.05) 26px
+				),
+				radial-gradient(circle at 18% 24%, rgba(88, 113, 95, 0.16), transparent 34%),
+				radial-gradient(circle at 82% 76%, rgba(184, 138, 74, 0.16), transparent 32%),
+				$cream-deep;
+		}
+
+		.home-product-brand {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&__logo {
+				display: block;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+			}
+
+			&--study-factory .home-product-brand__logo {
+				width: min(62%, 220px);
+				max-height: 224px;
+			}
+
+			&--jagong-online .home-product-brand__logo {
+				width: min(86%, 310px);
+				max-height: 208px;
+			}
+		}
+
 		&__promo-copy {
 			position: relative;
 			min-height: 0;
-			gap: 13px;
-			padding: 24px;
+			gap: 14px;
+			padding: 24px 20px 26px;
 
 			> span {
 				color: $gold;
 				font-size: 11px;
 				font-weight: 850;
+				letter-spacing: 0.12em;
 				text-transform: uppercase;
 			}
 
@@ -697,8 +760,8 @@
 			}
 
 			h3 {
-				font-size: 29px;
-				line-height: 1.12;
+				font-size: clamp(25px, 7vw, 29px);
+				line-height: 1.16;
 				font-weight: 900;
 			}
 
@@ -709,9 +772,27 @@
 			}
 		}
 
+		&__points {
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 2px;
+
+			em {
+				padding: 6px 9px;
+				border: 1px solid rgba(88, 113, 95, 0.3);
+				border-radius: 999px;
+				color: $forest;
+				font-size: 10px;
+				font-style: normal;
+				font-weight: 800;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+			}
+		}
+
 		&__cta {
 			gap: 8px;
-			margin-top: 6px;
+			margin-top: 4px;
 			color: $ink;
 			font-size: 14px;
 			font-weight: 850;
