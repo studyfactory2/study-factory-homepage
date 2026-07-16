@@ -9,6 +9,7 @@ import {
 	BRAND,
 	STUDY_FACTORY_AUDIENCES,
 	STUDY_FACTORY_FACILITIES,
+	STUDY_FACTORY_FEATURES,
 	STUDY_FACTORY_FLOW,
 	STUDY_FACTORY_HERO_IMAGE,
 } from '../../../config';
@@ -17,9 +18,18 @@ const MobileStudyFactoryPage = () => {
 	return (
 		<Box component="main" className="study-factory-page mobile-study-factory-page">
 			<Stack component="section" className="mobile-study-factory-hero">
-				<Typography component="span" className="section-kicker">
-					Study Factory Space
-				</Typography>
+				<Stack direction="row" alignItems="center" className="mobile-study-factory-hero__brand">
+					<Image
+						src="/images/brands/study-factory-logo-transparent-cropped.png"
+						alt=""
+						width={22}
+						height={23}
+						className="mobile-study-factory-hero__mark"
+					/>
+					<Typography component="span" className="section-kicker">
+						Study Factory Space
+					</Typography>
+				</Stack>
 				<Typography component="h1">공부만 남도록 하루의 구조를 운영합니다.</Typography>
 				<Box className="mobile-study-factory-hero__visual">
 					<Image
@@ -84,11 +94,35 @@ const MobileStudyFactoryPage = () => {
 				</Stack>
 			</Stack>
 
+			{STUDY_FACTORY_FEATURES.map((feature) => (
+				<Stack
+					component="section"
+					key={feature.kicker}
+					className="mobile-study-factory-section mobile-study-factory-feature"
+				>
+					<Box className="mobile-study-factory-feature__image">
+						<Image src={feature.image} alt={feature.alt} fill sizes="100vw" />
+					</Box>
+					<Typography component="span" className="section-kicker">
+						{feature.kicker}
+					</Typography>
+					<Typography component="h2">{feature.title}</Typography>
+					<Typography component="p">{feature.body}</Typography>
+					<Stack direction="row" className="mobile-study-factory-feature__points">
+						{feature.points.map((point) => (
+							<Typography key={point} component="em">
+								{point}
+							</Typography>
+						))}
+					</Stack>
+				</Stack>
+			))}
+
 			<Stack component="section" className="mobile-study-factory-section">
 				<Typography component="span" className="section-kicker">
 					Space Details
 				</Typography>
-				<Typography component="h2">실제 공간 사진으로 교체할 영역입니다.</Typography>
+				<Typography component="h2">공간의 밀도를 보여주는 순간들입니다.</Typography>
 				<Stack className="mobile-study-factory-gallery">
 					{STUDY_FACTORY_FACILITIES.map((facility) => (
 						<Stack key={facility.title} className="mobile-study-factory-gallery__item">

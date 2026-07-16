@@ -9,6 +9,7 @@ import {
 	BRAND,
 	STUDY_FACTORY_AUDIENCES,
 	STUDY_FACTORY_FACILITIES,
+	STUDY_FACTORY_FEATURES,
 	STUDY_FACTORY_FLOW,
 	STUDY_FACTORY_HERO_IMAGE,
 } from '../../../config';
@@ -18,9 +19,18 @@ const PcStudyFactoryPage = () => {
 		<Box component="main" className="study-factory-page pc-study-factory-page">
 			<Stack component="section" direction="row" className="pc-study-factory-hero">
 				<Stack className="pc-study-factory-hero__copy">
-					<Typography component="span" className="section-kicker">
-						Study Factory Space
-					</Typography>
+					<Stack direction="row" alignItems="center" className="pc-study-factory-hero__brand">
+						<Image
+							src="/images/brands/study-factory-logo-transparent-cropped.png"
+							alt=""
+							width={26}
+							height={27}
+							className="pc-study-factory-hero__mark"
+						/>
+						<Typography component="span" className="section-kicker">
+							Study Factory Space
+						</Typography>
+					</Stack>
 					<Typography component="h1">공부만 남도록 하루의 구조를 운영합니다.</Typography>
 					<Typography component="p">
 						자격증공장은 부산에서 성인 수험생의 좌석, 출석, 루틴, 공지, 상담을 하나의 흐름으로 정리하는
@@ -107,18 +117,52 @@ const PcStudyFactoryPage = () => {
 				</Stack>
 			</Stack>
 
+			<Stack component="section" className="pc-study-factory-features">
+				{STUDY_FACTORY_FEATURES.map((feature, index) => (
+					<Stack
+						key={feature.kicker}
+						direction="row"
+						className={`pc-study-factory-features__row${
+							index % 2 === 1 ? ' pc-study-factory-features__row--reverse' : ''
+						}`}
+					>
+						<Box className="pc-study-factory-features__image">
+							<Image
+								src={feature.image}
+								alt={feature.alt}
+								fill
+								sizes="(min-width: 1024px) 50vw, 100vw"
+							/>
+						</Box>
+						<Stack className="pc-study-factory-features__copy">
+							<Typography component="span" className="section-kicker">
+								{feature.kicker}
+							</Typography>
+							<Typography component="h2">{feature.title}</Typography>
+							<Typography component="p">{feature.body}</Typography>
+							<Stack direction="row" className="pc-study-factory-features__points">
+								{feature.points.map((point) => (
+									<Typography key={point} component="em">
+										{point}
+									</Typography>
+								))}
+							</Stack>
+						</Stack>
+					</Stack>
+				))}
+			</Stack>
+
 			<Stack component="section" direction="row" className="pc-study-factory-gallery">
 				<Stack className="pc-study-factory-gallery__copy">
 					<Typography component="span" className="section-kicker">
 						Space Details
 					</Typography>
-					<Typography component="h2">사진이 들어오면 실제 공간의 밀도를 보여줍니다.</Typography>
+					<Typography component="h2">공간의 밀도를 보여주는 순간들입니다.</Typography>
 					<Typography component="p">
-						이 영역은 좌석, 복도, 상담 공간, 안내 흐름처럼 실제 Study Factory를 확인할 수 있는 이미지로
-						교체합니다.
+						좌석, 라운지, 집중 디테일처럼 하루를 지탱하는 Study Factory의 실제 분위기입니다.
 					</Typography>
 				</Stack>
-				<Stack className="pc-study-factory-gallery__items">
+				<Stack direction="row" className="pc-study-factory-gallery__items">
 					{STUDY_FACTORY_FACILITIES.map((facility) => (
 						<Stack key={facility.title} className="pc-study-factory-gallery__item">
 							<Box className="pc-study-factory-gallery__image">
@@ -126,7 +170,7 @@ const PcStudyFactoryPage = () => {
 									src={facility.image}
 									alt={facility.alt}
 									fill
-									sizes="360px"
+									sizes="(min-width: 1024px) 33vw, 100vw"
 								/>
 							</Box>
 							<Typography component="strong">{facility.title}</Typography>
