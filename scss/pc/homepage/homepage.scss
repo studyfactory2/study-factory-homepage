@@ -42,7 +42,7 @@
 			position: relative;
 			z-index: 2;
 			width: $pc-container;
-			min-height: clamp(520px, 70vw, 760px);
+			min-height: calc(100svh - 88px);
 			margin: 0 auto;
 			align-items: center;
 			justify-content: flex-end;
@@ -52,8 +52,9 @@
 			width: clamp(340px, 62vw, 760px);
 			align-items: center;
 			gap: clamp(18px, 2.4vw, 28px);
-			padding-bottom: clamp(40px, 6vw, 72px);
+			padding-bottom: clamp(32px, 3vw, 48px);
 			text-align: center;
+			animation: home-step-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) 2000ms both;
 
 			strong {
 				color: rgba(248, 243, 234, 0.9);

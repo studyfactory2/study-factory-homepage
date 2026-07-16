@@ -46,6 +46,7 @@
 			gap: 24px;
 			padding-bottom: 32px;
 			text-align: center;
+			animation: home-step-reveal-mobile 800ms cubic-bezier(0.22, 1, 0.36, 1) 2000ms both;
 
 			strong {
 				color: rgba(248, 243, 234, 0.9);

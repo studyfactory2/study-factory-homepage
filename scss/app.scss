@@ -216,7 +216,9 @@
 @media (prefers-reduced-motion: reduce) {
 	.pc-home-focus__step,
 	.mobile-home-focus__step,
-	.mobile-home-focus__flow-node {
+	.mobile-home-focus__flow-node,
+	.pc-home-hero__copy,
+	.mobile-home-hero__copy {
 		opacity: 1 !important;
 		translate: none !important;
 		transform: none !important;
