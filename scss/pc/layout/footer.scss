@@ -7,11 +7,12 @@
 			width: $pc-container;
 			margin: 0 auto;
 			padding: 76px 0;
-			gap: 80px;
+			gap: clamp(36px, 5vw, 80px);
 		}
 
 		&__brand {
-			width: 340px;
+			flex: 0 1 340px;
+			min-width: 240px;
 			gap: 12px;
 
 			span {
@@ -35,7 +36,8 @@
 
 		&__links {
 			flex: 1;
-			gap: 70px;
+			min-width: 220px;
+			gap: clamp(32px, 4vw, 70px);
 		}
 
 		&__group {
@@ -59,11 +61,12 @@
 		}
 
 		&__contact {
-			width: 290px;
+			flex: 0 1 340px;
+			min-width: 0;
 			gap: 16px;
 			align-items: flex-start;
 
-			span {
+			> span {
 				color: rgba(248, 243, 234, 0.52);
 				font-size: 12px;
 				font-weight: 800;
@@ -71,14 +74,40 @@
 				text-transform: uppercase;
 			}
 
-			a {
+			> a {
 				display: flex;
+				max-width: 100%;
+				min-width: 0;
 				align-items: center;
 				gap: 8px;
-				color: $cream;
-				font-size: 20px;
-				font-weight: 800;
+				color: rgba(248, 243, 234, 0.84);
+				font-family: $font;
+				font-size: clamp(15px, 1.1vw, 16px);
+				font-style: normal;
+				font-weight: 700;
+				letter-spacing: -0.015em;
+				white-space: nowrap;
+				transition: color 180ms ease;
+
+				svg {
+					flex-shrink: 0;
+					color: $gold;
+					transition: transform 180ms ease;
+				}
+
+				&:hover {
+					color: $cream;
+
+					svg {
+						transform: translate(2px, -2px);
+					}
+				}
 			}
+		}
+
+		&__email-text {
+			min-width: 0;
+			white-space: nowrap;
 		}
 
 		&__phones {
