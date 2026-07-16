@@ -1,0 +1,139 @@
+#mobile-wrap {
+	.mobile-study-factory-page {
+		background: $background;
+	}
+
+	.mobile-study-factory-hero {
+		padding: 124px 20px 68px;
+		gap: 22px;
+
+		h1 {
+			font-size: 40px;
+			line-height: 1.1;
+			font-weight: 900;
+			letter-spacing: 0;
+		}
+
+		p {
+			color: $ink-soft;
+			font-size: 15px;
+			line-height: 1.82;
+		}
+	}
+
+	.mobile-study-factory-hero__visual {
+		position: relative;
+		height: 360px;
+		overflow: hidden;
+		border: 1px solid $line;
+		background: $cream-deep;
+	}
+
+	.mobile-study-factory-hero__image {
+		object-fit: cover;
+	}
+
+	.mobile-study-factory-hero__actions {
+		margin-top: 4px;
+	}
+
+	.mobile-study-factory-section {
+		padding: 68px 20px;
+		gap: 18px;
+		border-top: 1px solid $line;
+
+		h2 {
+			font-size: 31px;
+			line-height: 1.16;
+			font-weight: 900;
+			letter-spacing: 0;
+		}
+
+		p {
+			color: $muted;
+			font-size: 15px;
+			line-height: 1.82;
+		}
+	}
+
+	.mobile-study-factory-intro {
+		background: rgba(255, 255, 255, 0.46);
+	}
+
+	.mobile-study-factory-audience,
+	.mobile-study-factory-flow,
+	.mobile-study-factory-gallery {
+		gap: 12px;
+		margin-top: 14px;
+	}
+
+	.mobile-study-factory-audience__card,
+	.mobile-study-factory-flow__step,
+	.mobile-study-factory-gallery__item {
+		gap: 12px;
+		padding: 20px;
+		border: 1px solid $line;
+		background: rgba(255, 255, 255, 0.58);
+
+		strong {
+			font-size: 21px;
+			line-height: 1.25;
+			font-weight: 900;
+		}
+	}
+
+	.mobile-study-factory-flow__meta {
+		gap: 10px;
+
+		span {
+			color: $gold;
+			font-size: 12px;
+			font-weight: 900;
+		}
+
+		em {
+			color: $forest;
+			font-size: 10px;
+			font-style: normal;
+			font-weight: 900;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+	}
+
+	.mobile-study-factory-gallery__image {
+		position: relative;
+		height: 210px;
+		margin-bottom: 6px;
+		overflow: hidden;
+		background: $cream-deep;
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+	.mobile-study-factory-app {
+		background: $paper;
+
+		a {
+			display: inline-flex;
+			width: fit-content;
+			align-items: center;
+			gap: 8px;
+			margin-top: 8px;
+			color: $ink;
+			font-size: 14px;
+			font-weight: 900;
+		}
+	}
+
+	.mobile-study-factory-cta {
+		padding-bottom: 86px;
+
+		.MuiButton-root {
+			width: fit-content;
+			margin-top: 8px;
+		}
+	}
+}

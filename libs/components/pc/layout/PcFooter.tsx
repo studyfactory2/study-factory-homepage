@@ -36,11 +36,11 @@ const PcFooter = () => {
 					</a>
 					<Stack className="pc-footer__phones">
 						<a href={`tel:${BRAND.studyFactoryPhone}`}>
-							<span>Study Factory</span>
+							<span>Study Factory: </span>
 							{BRAND.studyFactoryPhone}
 						</a>
 						<a href={`tel:${BRAND.researchLabPhone}`}>
-							<span>Research Lab</span>
+							<span>Research Lab: </span>
 							{BRAND.researchLabPhone}
 						</a>
 					</Stack>

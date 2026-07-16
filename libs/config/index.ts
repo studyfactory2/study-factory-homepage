@@ -4,3 +4,4 @@ export * from './media';
 export * from './navigation';
 export * from './products';
 export * from './seo';
+export * from './studyFactory';

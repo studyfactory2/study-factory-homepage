@@ -94,7 +94,7 @@ export const HOME_EXAM_GROUPS: HomeExamGroup[] = [
 export const HOME_STUDY_FACTORY_FILM: HomeFeatureFilm = {
 	slug: 'study-factory',
 	body: '조용한 자리와 반복되는 출석, 필요한 순간의 상담까지. 장기 수험 생활이 흔들리지 않도록 하루의 구조를 운영합니다.',
-	href: '/about',
+	href: '/study-factory',
 	cta: '공간 둘러보기',
 	video: MEDIA_ASSETS.studyFactoryFilm,
 };
