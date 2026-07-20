@@ -9,7 +9,7 @@ const MobileFooter = () => {
 			<Stack className="mobile-footer__brand">
 				<Typography component="span">{BRAND.englishName}</Typography>
 				<Typography component="strong">{BRAND.koreanName}</Typography>
-				<Typography component="p">{BRAND.sloganEn}</Typography>
+				<Typography component="p">공부를 지속할 수 있는 환경과 루틴을 만듭니다.</Typography>
 			</Stack>
 
 			<Stack className="mobile-footer__links">
@@ -26,12 +26,8 @@ const MobileFooter = () => {
 
 			<Stack className="mobile-footer__phones">
 				<a href={`tel:${BRAND.studyFactoryPhone}`}>
-					<span>Study Factory</span>
+					<span>자격증공장</span>
 					{BRAND.studyFactoryPhone}
-				</a>
-				<a href={`tel:${BRAND.researchLabPhone}`}>
-					<span>Research Lab</span>
-					{BRAND.researchLabPhone}
 				</a>
 			</Stack>
 		</Stack>

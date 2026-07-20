@@ -12,7 +12,7 @@ const PcFooter = () => {
 				<Stack className="pc-footer__brand">
 					<Typography component="span">{BRAND.englishName}</Typography>
 					<Typography component="strong">{BRAND.koreanName}</Typography>
-					<Typography component="p">{BRAND.sloganEn}</Typography>
+					<Typography component="p">공부를 지속할 수 있는 환경과 루틴을 만듭니다.</Typography>
 				</Stack>
 
 				<Stack direction="row" className="pc-footer__links">
@@ -29,19 +29,15 @@ const PcFooter = () => {
 				</Stack>
 
 				<Stack className="pc-footer__contact">
-					<Typography component="span">Start a conversation</Typography>
+					<Typography component="span">상담 및 문의</Typography>
 					<a href={`mailto:${BRAND.email}`} className="pc-footer__email">
 						<span className="pc-footer__email-text">{BRAND.email}</span>
 						<ArrowOutwardIcon fontSize="small" />
 					</a>
 					<Stack className="pc-footer__phones">
 						<a href={`tel:${BRAND.studyFactoryPhone}`}>
-							<span>Study Factory: </span>
+							<span>자격증공장</span>
 							{BRAND.studyFactoryPhone}
-						</a>
-						<a href={`tel:${BRAND.researchLabPhone}`}>
-							<span>Research Lab: </span>
-							{BRAND.researchLabPhone}
 						</a>
 					</Stack>
 				</Stack>

@@ -3,6 +3,151 @@
 		background: $cream;
 	}
 
+	.pc-home-gateway {
+		min-height: 100svh;
+		padding-top: 88px;
+		background: $night;
+
+		&__grid {
+			min-height: calc(100svh - 88px);
+		}
+
+		&__panel {
+			position: relative;
+			display: flex;
+			flex: 1 1 50%;
+			min-width: 0;
+			overflow: hidden;
+			align-items: center;
+			justify-content: center;
+			isolation: isolate;
+			color: $cream;
+			text-decoration: none;
+			&:hover {
+				.pc-home-gateway__image {
+					transform: scale(1.045);
+				}
+
+				.pc-home-gateway__link::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+
+		&__panel--study-factory {
+			background: #493e30;
+		}
+
+		&__panel--jagong-online {
+			justify-content: center;
+			background:
+				radial-gradient(circle at 28% 22%, rgba(90, 137, 138, 0.5), transparent 32%),
+				radial-gradient(circle at 78% 75%, rgba(213, 157, 109, 0.25), transparent 34%),
+				linear-gradient(145deg, #112d31 0%, #0d1719 47%, #33221b 100%);
+
+			&::before,
+			&::after {
+				position: absolute;
+				z-index: -1;
+				border: 1px solid rgba(248, 243, 234, 0.12);
+				border-radius: 50%;
+				content: '';
+			}
+
+			&::before {
+				top: 11%;
+				right: -15%;
+				width: 62%;
+				aspect-ratio: 1;
+			}
+
+			&::after {
+				bottom: -19%;
+				left: -12%;
+				width: 54%;
+				aspect-ratio: 1;
+			}
+
+		}
+
+		&__image {
+			position: absolute;
+			inset: 0;
+			z-index: -2;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			filter: saturate(0.78) contrast(1.05);
+			transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+		}
+
+		&__veil {
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background:
+				linear-gradient(180deg, rgba(8, 10, 9, 0.25) 0%, rgba(8, 10, 9, 0.12) 36%, rgba(8, 10, 9, 0.86) 100%),
+				linear-gradient(90deg, rgba(8, 10, 9, 0.22), transparent 58%);
+		}
+
+		&__panel-copy {
+			width: min(100%, 440px);
+			align-items: center;
+			padding: 88px 42px 0;
+			gap: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-family: $font-heading;
+			font-size: 34px;
+			font-weight: 800;
+			line-height: 1.25;
+		}
+
+		&__link {
+			position: relative;
+			width: fit-content;
+			padding-bottom: 6px;
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.2;
+
+			&::after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				background: currentColor;
+				transform: scaleX(0.45);
+				transform-origin: left;
+				transition: transform 320ms ease;
+				content: '';
+			}
+
+		}
+
+		@media (max-width: 1180px) {
+			&__panel-copy {
+				padding: 88px 32px 0;
+			}
+
+			h1 {
+				font-size: 30px;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			&__panel,
+			&__image,
+			&__link::after {
+				transition: none;
+			}
+		}
+	}
+
 	.pc-home-hero {
 		position: relative;
 		min-height: 100vh;

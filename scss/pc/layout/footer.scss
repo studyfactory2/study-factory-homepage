@@ -35,9 +35,9 @@
 		}
 
 		&__links {
-			flex: 1;
-			min-width: 220px;
-			gap: clamp(32px, 4vw, 70px);
+			flex: 0 1 220px;
+			min-width: 160px;
+			gap: 28px;
 		}
 
 		&__group {
@@ -46,8 +46,7 @@
 			strong {
 				color: rgba(248, 243, 234, 0.9);
 				font-size: 13px;
-				letter-spacing: 0.08em;
-				text-transform: uppercase;
+				letter-spacing: 0;
 			}
 
 			a {

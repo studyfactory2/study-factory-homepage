@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
 
 $font:
 	'Inter',
@@ -14,6 +14,7 @@ $font-heading:
 	BlinkMacSystemFont,
 	'Segoe UI',
 	sans-serif;
+$font-editorial: 'Cormorant Garamond', 'Noto Sans KR', serif;
 
 $ink: #111312;
 $ink-soft: #3d403c;

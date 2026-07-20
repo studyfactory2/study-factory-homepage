@@ -34,6 +34,40 @@ export interface HomeFeatureFilm {
 	video: string;
 }
 
+export interface HomeExperience {
+	id: 'study-factory' | 'jagong-online';
+	name: string;
+	koreanName: string;
+	eyebrow: string;
+	description: string;
+	href: string;
+	imageSrc?: string;
+	imageAlt?: string;
+	logoSrc?: string;
+}
+
+export const HOME_EXPERIENCES: HomeExperience[] = [
+	{
+		id: 'study-factory',
+		name: '자격증공장',
+		koreanName: '자격증공장',
+		eyebrow: '자격증공장',
+		description: '자세히 보기',
+		href: '/study-factory',
+		imageSrc: '/images/study-factory/space-hero.jpg',
+		imageAlt: '따뜻한 채광이 들어오는 Study Factory 공간 무드',
+	},
+	{
+		id: 'jagong-online',
+		name: '재택근무반',
+		koreanName: '재택근무반',
+		eyebrow: '재택근무반',
+		description: '자세히 보기',
+		href: '/jagong-online',
+		logoSrc: '/images/brands/jagong-online-logo.webp',
+	},
+];
+
 export const HOME_SYSTEM_STEPS: HomeSystemStep[] = [
 	{
 		number: '01',

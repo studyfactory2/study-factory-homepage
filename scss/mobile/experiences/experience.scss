@@ -1,0 +1,114 @@
+#mobile-wrap {
+	.mobile-experience-page {
+		background: $background;
+	}
+
+	.mobile-experience-page__hero,
+	.mobile-experience-page__media-card {
+		position: relative;
+		display: flex;
+		overflow: hidden;
+		background: $night;
+		color: $cream;
+
+		> img,
+		> video {
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.mobile-experience-page__hero {
+		min-height: 680px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobile-experience-page__hero-veil,
+	.mobile-experience-page__media-veil {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background: linear-gradient(180deg, rgba(9, 11, 10, 0.28), rgba(9, 11, 10, 0.14) 42%, rgba(9, 11, 10, 0.8));
+	}
+
+	.mobile-experience-page__hero-copy {
+		position: relative;
+		z-index: 2;
+		align-items: center;
+		padding: 74px 28px 0;
+		gap: 14px;
+		text-align: center;
+
+		span {
+			color: rgba(248, 243, 234, 0.72);
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		h1 {
+			font-size: 36px;
+			line-height: 1.25;
+			font-weight: 800;
+		}
+
+		a {
+			margin-top: 6px;
+			padding-bottom: 6px;
+			border-bottom: 1px solid rgba(248, 243, 234, 0.72);
+			color: $cream;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+
+	.mobile-experience-page__media-list {
+		gap: 12px;
+		padding: 12px;
+	}
+
+	.mobile-experience-page__media-card {
+		min-height: 300px;
+		align-items: flex-end;
+
+		&--brand {
+			align-items: center;
+			justify-content: center;
+			background:
+				radial-gradient(circle at 28% 22%, rgba(90, 137, 138, 0.42), transparent 32%),
+				linear-gradient(145deg, #112d31 0%, #0d1719 60%, #33221b 100%);
+
+			> img {
+				position: relative;
+				z-index: 1;
+				width: min(48%, 210px);
+				height: auto;
+				object-fit: contain;
+			}
+		}
+	}
+
+	.mobile-experience-page__media-copy {
+		position: relative;
+		z-index: 2;
+		padding: 24px;
+		gap: 7px;
+
+		strong {
+			font-size: 25px;
+			font-weight: 800;
+		}
+
+		span {
+			width: fit-content;
+			padding-bottom: 5px;
+			border-bottom: 1px solid rgba(248, 243, 234, 0.68);
+			font-size: 13px;
+			font-weight: 600;
+		}
+	}
+}
