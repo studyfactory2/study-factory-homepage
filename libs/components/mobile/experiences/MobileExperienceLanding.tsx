@@ -3,7 +3,9 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
+import StudyFactoryCare from '../../common/experiences/StudyFactoryCare';
 import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
+import SoundFilm from '../../common/experiences/SoundFilm';
 
 interface MobileExperienceLandingProps {
 	experience: ExperienceLanding;
@@ -22,8 +24,14 @@ const MobileExperienceMedia = ({ item }: { item: ExperienceMedia }) => {
 };
 
 const MobileExperienceLanding = ({ experience }: MobileExperienceLandingProps) => {
+	const soundFilm = experience.media.find((item) => item.hasSoundControl);
+	const editorialMedia = experience.media.filter((item) => !item.hasSoundControl);
+
 	return (
-		<Box component="main" className={`experience-page mobile-experience-page mobile-experience-page--${experience.slug}`}>
+		<Box
+			component="main"
+			className={`experience-page mobile-experience-page mobile-experience-page--${experience.slug}`}
+		>
 			<Box component="section" className="mobile-experience-page__hero">
 				<MobileExperienceMedia item={experience.hero} />
 				<Box className="mobile-experience-page__hero-veil" aria-hidden="true" />
@@ -35,24 +43,30 @@ const MobileExperienceLanding = ({ experience }: MobileExperienceLandingProps) =
 			</Box>
 
 			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="mobile-experience-page__origin" />}
+			{soundFilm && (
+				<SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="mobile-experience-page__feature-film" />
+			)}
+			{experience.slug === 'study-factory' && <StudyFactoryCare className="mobile-experience-page__care" />}
 
-			<Stack component="section" className="mobile-experience-page__media-list">
-				{experience.media.map((item) => (
-					<Box
-						component={Link}
-						href={item.href}
-						key={item.id}
-						className={`mobile-experience-page__media-card mobile-experience-page__media-card--${item.type}`}
-					>
-						<MobileExperienceMedia item={item} />
-						<Box className="mobile-experience-page__media-veil" aria-hidden="true" />
-						<Stack className="mobile-experience-page__media-copy">
-							<Typography component="strong">{item.label}</Typography>
-							<Typography component="span">자세히 보기</Typography>
-						</Stack>
-					</Box>
-				))}
-			</Stack>
+			{editorialMedia.length > 0 && (
+				<Stack component="section" className="mobile-experience-page__media-list">
+					{editorialMedia.map((item) => (
+						<Box
+							component={Link}
+							href={item.href}
+							key={item.id}
+							className={`mobile-experience-page__media-card mobile-experience-page__media-card--${item.type}`}
+						>
+							<MobileExperienceMedia item={item} />
+							<Box className="mobile-experience-page__media-veil" aria-hidden="true" />
+							<Stack className="mobile-experience-page__media-copy">
+								<Typography component="strong">{item.label}</Typography>
+								<Typography component="span">자세히 보기</Typography>
+							</Stack>
+						</Box>
+					))}
+				</Stack>
+			)}
 		</Box>
 	);
 };

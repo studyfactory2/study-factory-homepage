@@ -7,6 +7,7 @@ export type ExperienceMedia = {
 	alt: string;
 	label: string;
 	href: string;
+	hasSoundControl?: boolean;
 };
 
 export type ExperienceLanding = {
@@ -35,28 +36,13 @@ export const STUDY_FACTORY_EXPERIENCE: ExperienceLanding = {
 	},
 	media: [
 		{
-			id: 'space-story',
-			type: 'image',
-			src: '/images/study-factory/space-lounge.jpg',
-			alt: '공간의 개방감과 밀도를 보여주는 Study Factory 공간',
-			label: '공간 이야기',
-			href: '/study-factory/about',
-		},
-		{
 			id: 'daily-film',
 			type: 'video',
 			src: MEDIA_ASSETS.studyFactoryFilm,
 			alt: '자격증공장 운영 장면 영상',
 			label: '하루의 흐름',
 			href: '/study-factory/about',
-		},
-		{
-			id: 'consultation',
-			type: 'image',
-			src: '/images/study-factory/space-focus-detail.jpg',
-			alt: '집중 루틴을 위한 책상과 조명 디테일',
-			label: '상담 예약',
-			href: '/contact',
+			hasSoundControl: true,
 		},
 	],
 };

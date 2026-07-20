@@ -33,8 +33,8 @@ const PcStudyFactoryPage = () => {
 					</Stack>
 					<Typography component="h1">공부만 남도록 하루의 구조를 운영합니다.</Typography>
 					<Typography component="p">
-						자격증공장은 부산에서 성인 수험생의 좌석, 출석, 루틴, 공지, 상담을 하나의 흐름으로 정리하는
-						프리미엄 학습 공간입니다.
+						자격증공장은 부산에서 성인 수험생의 좌석, 출석, 루틴, 공지, 상담을 하나의 흐름으로 정리하는 프리미엄 학습
+						공간입니다.
 					</Typography>
 					<Stack direction="row" className="pc-study-factory-hero__actions">
 						<ArrowButton href="/contact" label="상담 예약" />
@@ -58,10 +58,12 @@ const PcStudyFactoryPage = () => {
 				<Typography component="span" className="section-kicker">
 					Not A Study Cafe
 				</Typography>
-				<Typography component="h2">중요한 것은 더 큰 자극이 아니라, 매일 같은 상태로 앉을 수 있는 구조입니다.</Typography>
+				<Typography component="h2">
+					중요한 것은 더 큰 자극이 아니라, 매일 같은 상태로 앉을 수 있는 구조입니다.
+				</Typography>
 				<Typography component="p">
-					공간은 조용해야 하고, 안내는 분명해야 하며, 하루의 시작점은 흔들리지 않아야 합니다. Study Factory는
-					공부 외의 결정을 줄이기 위해 운영되는 실제 학습 시스템입니다.
+					공간은 조용해야 하고, 안내는 분명해야 하며, 하루의 시작점은 흔들리지 않아야 합니다. Study Factory는 공부 외의
+					결정을 줄이기 위해 운영되는 실제 학습 시스템입니다.
 				</Typography>
 			</Stack>
 
@@ -74,8 +76,8 @@ const PcStudyFactoryPage = () => {
 						<Typography component="h2">긴 시험을 준비하는 사람에게 맞춘 공간입니다.</Typography>
 					</Stack>
 					<Typography component="p">
-						공부 시간이 길어질수록 필요한 것은 분위기보다 운영 기준입니다. 자격증공장은 그 기준을 공간 안에
-						반복되게 만듭니다.
+						공부 시간이 길어질수록 필요한 것은 분위기보다 운영 기준입니다. 자격증공장은 그 기준을 공간 안에 반복되게
+						만듭니다.
 					</Typography>
 				</Stack>
 
@@ -98,8 +100,7 @@ const PcStudyFactoryPage = () => {
 						<Typography component="h2">도착부터 상담까지, 공부 외의 결정을 줄입니다.</Typography>
 					</Stack>
 					<Typography component="p">
-						공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다. 하루가 흔들리지 않도록 작은 흐름을 먼저
-						정리합니다.
+						공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다. 하루가 흔들리지 않도록 작은 흐름을 먼저 정리합니다.
 					</Typography>
 				</Stack>
 
@@ -127,12 +128,7 @@ const PcStudyFactoryPage = () => {
 						}`}
 					>
 						<Box className="pc-study-factory-features__image">
-							<Image
-								src={feature.image}
-								alt={feature.alt}
-								fill
-								sizes="(min-width: 1024px) 50vw, 100vw"
-							/>
+							<Image src={feature.image} alt={feature.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" />
 						</Box>
 						<Stack className="pc-study-factory-features__copy">
 							<Typography component="span" className="section-kicker">
@@ -166,12 +162,7 @@ const PcStudyFactoryPage = () => {
 					{STUDY_FACTORY_FACILITIES.map((facility) => (
 						<Stack key={facility.title} className="pc-study-factory-gallery__item">
 							<Box className="pc-study-factory-gallery__image">
-								<Image
-									src={facility.image}
-									alt={facility.alt}
-									fill
-									sizes="(min-width: 1024px) 33vw, 100vw"
-								/>
+								<Image src={facility.image} alt={facility.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" />
 							</Box>
 							<Typography component="strong">{facility.title}</Typography>
 							<Typography component="p">{facility.body}</Typography>
@@ -187,8 +178,8 @@ const PcStudyFactoryPage = () => {
 					</Typography>
 					<Typography component="h2">공간 운영은 앱에서도 이어집니다.</Typography>
 					<Typography component="p">
-						Study Factory App은 실제 공간 회원을 위한 운영 앱입니다. 예약, 출석, 멤버십, 공지, 상담 흐름을
-						모바일에서 확인할 수 있게 만듭니다.
+						Study Factory App은 실제 공간 회원을 위한 운영 앱입니다. 예약, 출석, 멤버십, 공지, 상담 흐름을 모바일에서
+						확인할 수 있게 만듭니다.
 					</Typography>
 					<Link href="/products/study-factory-app">
 						앱 페이지 보기

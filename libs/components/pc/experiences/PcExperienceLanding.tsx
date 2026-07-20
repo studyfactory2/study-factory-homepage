@@ -3,7 +3,9 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
+import StudyFactoryCare from '../../common/experiences/StudyFactoryCare';
 import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
+import SoundFilm from '../../common/experiences/SoundFilm';
 
 interface PcExperienceLandingProps {
 	experience: ExperienceLanding;
@@ -22,6 +24,9 @@ const ExperienceMediaVisual = ({ item, priority = false }: { item: ExperienceMed
 };
 
 const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
+	const soundFilm = experience.media.find((item) => item.hasSoundControl);
+	const editorialMedia = experience.media.filter((item) => !item.hasSoundControl);
+
 	return (
 		<Box component="main" className={`experience-page pc-experience-page pc-experience-page--${experience.slug}`}>
 			<Box component="section" className="pc-experience-page__hero">
@@ -36,25 +41,29 @@ const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
 			</Box>
 
 			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="pc-experience-page__origin" />}
+			{soundFilm && <SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="pc-experience-page__feature-film" />}
+			{experience.slug === 'study-factory' && <StudyFactoryCare className="pc-experience-page__care" />}
 
-			<Stack component="section" className="pc-experience-page__media-grid">
-				{experience.media.map((item, index) => (
-					<Box
-						component={Link}
-						href={item.href}
-						key={item.id}
-						className={`pc-experience-page__media-card pc-experience-page__media-card--${item.type}`}
-					>
-						<ExperienceMediaVisual item={item} />
-						<Box className="pc-experience-page__media-veil" aria-hidden="true" />
-						<Stack className="pc-experience-page__media-copy">
-							<Typography component="span">0{index + 1}</Typography>
-							<Typography component="strong">{item.label}</Typography>
-							<Typography component="em">자세히 보기</Typography>
-						</Stack>
-					</Box>
-				))}
-			</Stack>
+			{editorialMedia.length > 0 && (
+				<Stack component="section" className="pc-experience-page__media-grid">
+					{editorialMedia.map((item, index) => (
+						<Box
+							component={Link}
+							href={item.href}
+							key={item.id}
+							className={`pc-experience-page__media-card pc-experience-page__media-card--${item.type}`}
+						>
+							<ExperienceMediaVisual item={item} />
+							<Box className="pc-experience-page__media-veil" aria-hidden="true" />
+							<Stack className="pc-experience-page__media-copy">
+								<Typography component="span">0{index + 1}</Typography>
+								<Typography component="strong">{item.label}</Typography>
+								<Typography component="em">자세히 보기</Typography>
+							</Stack>
+						</Box>
+					))}
+				</Stack>
+			)}
 		</Box>
 	);
 };
