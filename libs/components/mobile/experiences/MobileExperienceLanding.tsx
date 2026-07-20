@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
+import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
 
 interface MobileExperienceLandingProps {
 	experience: ExperienceLanding;
@@ -32,6 +33,8 @@ const MobileExperienceLanding = ({ experience }: MobileExperienceLandingProps) =
 					<Link href={experience.aboutHref}>자세히 보기</Link>
 				</Stack>
 			</Box>
+
+			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="mobile-experience-page__origin" />}
 
 			<Stack component="section" className="mobile-experience-page__media-list">
 				{experience.media.map((item) => (

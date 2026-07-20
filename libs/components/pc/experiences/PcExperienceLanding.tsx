@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
+import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
 
 interface PcExperienceLandingProps {
 	experience: ExperienceLanding;
@@ -33,6 +34,8 @@ const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
 					<Link href={experience.aboutHref}>자세히 보기</Link>
 				</Stack>
 			</Box>
+
+			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="pc-experience-page__origin" />}
 
 			<Stack component="section" className="pc-experience-page__media-grid">
 				{experience.media.map((item, index) => (
