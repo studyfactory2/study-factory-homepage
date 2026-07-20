@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
-import StudyFactoryCare from '../../common/experiences/StudyFactoryCare';
+import StudyFactoryJourney from '../../common/experiences/StudyFactoryJourney';
 import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
 import SoundFilm from '../../common/experiences/SoundFilm';
 
@@ -24,7 +24,7 @@ const ExperienceMediaVisual = ({ item, priority = false }: { item: ExperienceMed
 };
 
 const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
-	const soundFilm = experience.media.find((item) => item.hasSoundControl);
+	const soundFilm = experience.slug === 'study-factory' ? undefined : experience.media.find((item) => item.hasSoundControl);
 	const editorialMedia = experience.media.filter((item) => !item.hasSoundControl);
 
 	return (
@@ -41,8 +41,11 @@ const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
 			</Box>
 
 			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="pc-experience-page__origin" />}
-			{soundFilm && <SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="pc-experience-page__feature-film" />}
-			{experience.slug === 'study-factory' && <StudyFactoryCare className="pc-experience-page__care" />}
+			{experience.slug === 'study-factory' ? (
+				<StudyFactoryJourney classPrefix="pc-experience-page" />
+			) : (
+				soundFilm && <SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="pc-experience-page__feature-film" />
+			)}
 
 			{editorialMedia.length > 0 && (
 				<Stack component="section" className="pc-experience-page__media-grid">

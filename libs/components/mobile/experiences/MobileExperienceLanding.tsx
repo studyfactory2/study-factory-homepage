@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
-import StudyFactoryCare from '../../common/experiences/StudyFactoryCare';
+import StudyFactoryJourney from '../../common/experiences/StudyFactoryJourney';
 import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
 import SoundFilm from '../../common/experiences/SoundFilm';
 
@@ -24,7 +24,8 @@ const MobileExperienceMedia = ({ item }: { item: ExperienceMedia }) => {
 };
 
 const MobileExperienceLanding = ({ experience }: MobileExperienceLandingProps) => {
-	const soundFilm = experience.media.find((item) => item.hasSoundControl);
+	const soundFilm =
+		experience.slug === 'study-factory' ? undefined : experience.media.find((item) => item.hasSoundControl);
 	const editorialMedia = experience.media.filter((item) => !item.hasSoundControl);
 
 	return (
@@ -43,10 +44,13 @@ const MobileExperienceLanding = ({ experience }: MobileExperienceLandingProps) =
 			</Box>
 
 			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="mobile-experience-page__origin" />}
-			{soundFilm && (
-				<SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="mobile-experience-page__feature-film" />
+			{experience.slug === 'study-factory' ? (
+				<StudyFactoryJourney classPrefix="mobile-experience-page" />
+			) : (
+				soundFilm && (
+					<SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="mobile-experience-page__feature-film" />
+				)
 			)}
-			{experience.slug === 'study-factory' && <StudyFactoryCare className="mobile-experience-page__care" />}
 
 			{editorialMedia.length > 0 && (
 				<Stack component="section" className="mobile-experience-page__media-list">

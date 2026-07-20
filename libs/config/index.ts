@@ -6,3 +6,4 @@ export * from './navigation';
 export * from './products';
 export * from './seo';
 export * from './studyFactory';
+export * from './studyFactoryJourney';

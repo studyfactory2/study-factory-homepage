@@ -34,17 +34,7 @@ export const STUDY_FACTORY_EXPERIENCE: ExperienceLanding = {
 		label: '자격증공장',
 		href: '/study-factory/about',
 	},
-	media: [
-		{
-			id: 'daily-film',
-			type: 'video',
-			src: MEDIA_ASSETS.studyFactoryFilm,
-			alt: '자격증공장 운영 장면 영상',
-			label: '하루의 흐름',
-			href: '/study-factory/about',
-			hasSoundControl: true,
-		},
-	],
+	media: [],
 };
 
 export const JAGONG_ONLINE_EXPERIENCE: ExperienceLanding = {
