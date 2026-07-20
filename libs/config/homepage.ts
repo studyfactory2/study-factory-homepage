@@ -50,12 +50,12 @@ export const HOME_EXPERIENCES: HomeExperience[] = [
 	{
 		id: 'study-factory',
 		name: '자격증공장',
-		koreanName: '자격증공장',
+		koreanName: '출퇴근사원 ',
 		eyebrow: '자격증공장',
 		description: '자세히 보기',
 		href: '/study-factory',
-		imageSrc: '/images/study-factory/space-hero.jpg',
-		imageAlt: '따뜻한 채광이 들어오는 Study Factory 공간 무드',
+		imageSrc: '/images/home/gateway-offline.jpeg',
+		imageAlt: '비 오는 저녁, 횡단보도를 걷는 사람의 모습',
 	},
 	{
 		id: 'jagong-online',
@@ -64,6 +64,8 @@ export const HOME_EXPERIENCES: HomeExperience[] = [
 		eyebrow: '재택근무반',
 		description: '자세히 보기',
 		href: '/jagong-online',
+		imageSrc: '/images/home/gateway-online.jpeg',
+		imageAlt: '노트북과 꽃이 놓인 온라인 학습 책상',
 		logoSrc: '/images/brands/jagong-online-logo.webp',
 	},
 ];

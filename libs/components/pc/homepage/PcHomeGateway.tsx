@@ -24,14 +24,19 @@ const PcHomeGateway = () => {
 							/>
 						)}
 						<Box className="pc-home-gateway__veil" aria-hidden="true" />
-						<Stack className="pc-home-gateway__panel-copy">
-							<Typography component="h1">{experience.koreanName}</Typography>
+						<Stack className="pc-home-gateway__panel-action">
+							<Typography component="span" className="pc-home-gateway__panel-name">
+								{experience.koreanName}
+							</Typography>
 							<Typography component="span" className="pc-home-gateway__link">
 								자세히 보기
 							</Typography>
 						</Stack>
 					</Box>
 				))}
+			</Stack>
+			<Stack className="pc-home-gateway__brand-mark">
+				<Typography component="h1">자격증공장</Typography>
 			</Stack>
 		</Box>
 	);
