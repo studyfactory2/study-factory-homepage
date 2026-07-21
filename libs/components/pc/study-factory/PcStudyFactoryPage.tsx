@@ -1,209 +1,132 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ArrowButton from '../../common/buttons/ArrowButton';
-import {
-	BRAND,
-	STUDY_FACTORY_AUDIENCES,
-	STUDY_FACTORY_FACILITIES,
-	STUDY_FACTORY_FEATURES,
-	STUDY_FACTORY_FLOW,
-	STUDY_FACTORY_HERO_IMAGE,
-} from '../../../config';
+import { MEDIA_ASSETS } from '../../../config';
+
+const ABOUT_FACTS = [
+	{ label: '대상', value: '성인 수험생 전용' },
+	{ label: '시험', value: '전문직 · 공무원 · 공기업 · 자격증' },
+	{ label: '공간', value: '부산 수영구 · 망미역 인근' },
+	{ label: '운영', value: '미성년자 입실 불가' },
+];
 
 const PcStudyFactoryPage = () => {
 	return (
 		<Box component="main" className="study-factory-page pc-study-factory-page">
-			<Stack component="section" direction="row" className="pc-study-factory-hero">
-				<Stack className="pc-study-factory-hero__copy">
-					<Stack direction="row" alignItems="center" className="pc-study-factory-hero__brand">
-						<Image
-							src="/images/brands/study-factory-logo-transparent-cropped.png"
-							alt=""
-							width={26}
-							height={27}
-							className="pc-study-factory-hero__mark"
-						/>
-						<Typography component="span" className="section-kicker">
-							Study Factory Space
+			<Box component="section" className="pc-study-factory-about-hero">
+				<video
+					autoPlay
+					muted
+					loop
+					playsInline
+					preload="metadata"
+					poster="/images/study-factory/space-lounge.jpg"
+					className="pc-study-factory-about-hero__video"
+				>
+					<source src={MEDIA_ASSETS.studyFactoryAboutMain} type="video/mp4" />
+				</video>
+				<Box className="pc-study-factory-about-hero__shade" />
+				<Stack className="pc-study-factory-about-hero__copy">
+					<Typography component="span" className="pc-study-factory-about-kicker">
+						Study Factory · Busan
+					</Typography>
+					<Typography component="h1">
+						공부만 하세요.
+						<br />
+						나머지는 자격증공장이 관리합니다.
+					</Typography>
+					<Typography component="p">
+						성인 수험생이 흔들리지 않고 오래 공부할 수 있도록,
+						<br />
+						공부 밖의 생활까지 정리합니다.
+					</Typography>
+					<Box component="a" href="#study-factory-origin" className="pc-study-factory-about-hero__discover">
+						이야기 시작하기
+						<ArrowDownwardIcon fontSize="small" />
+					</Box>
+				</Stack>
+				<Typography component="span" className="pc-study-factory-about-hero__index">
+					Since 2022
+				</Typography>
+			</Box>
+
+			<Stack id="study-factory-origin" component="section" className="pc-study-factory-about-origin">
+				<Stack direction="row" justifyContent="space-between" className="pc-study-factory-about-origin__heading">
+					<Typography component="span" className="pc-study-factory-about-kicker pc-study-factory-about-kicker--dark">
+						Our Beginning
+					</Typography>
+					<Typography component="span" className="pc-study-factory-about-origin__chapter">
+						01
+					</Typography>
+				</Stack>
+				<Stack direction="row" className="pc-study-factory-about-origin__body">
+					<Typography component="strong">2022</Typography>
+					<Stack className="pc-study-factory-about-origin__copy">
+						<Typography component="h2">
+							성인 수험생이 공부만 할 수 있는 환경을 만들기 시작했습니다.
+						</Typography>
+						<Typography component="p">
+							긴 시험을 준비하는 하루에는 공부보다 먼저 소모되는 것들이 있습니다. 몸의 컨디션, 식사,
+							정리되지 않은 생활과 반복되는 작은 결정들. 자격증공장은 그 소모를 줄이는 일에서
+							시작했습니다.
 						</Typography>
 					</Stack>
-					<Typography component="h1">공부만 남도록 하루의 구조를 운영합니다.</Typography>
-					<Typography component="p">
-						자격증공장은 부산에서 성인 수험생의 좌석, 출석, 루틴, 공지, 상담을 하나의 흐름으로 정리하는 프리미엄 학습
-						공간입니다.
-					</Typography>
-					<Stack direction="row" className="pc-study-factory-hero__actions">
-						<ArrowButton href="/contact" label="상담 예약" />
-						<ArrowButton href="#space-flow" label="운영 흐름 보기" variant="outlined" />
-					</Stack>
 				</Stack>
+			</Stack>
 
-				<Box className="pc-study-factory-hero__visual">
+			<Stack component="section" direction="row" className="pc-study-factory-about-definition">
+				<Box className="pc-study-factory-about-definition__visual">
 					<Image
-						src={STUDY_FACTORY_HERO_IMAGE.src}
-						alt={STUDY_FACTORY_HERO_IMAGE.alt}
+						src="/images/study-factory/space-hero.jpg"
+						alt="따뜻한 빛이 들어오는 자격증공장 학습 공간"
 						fill
-						priority
 						sizes="(min-width: 1024px) 50vw, 100vw"
-						className="pc-study-factory-hero__image"
 					/>
+					<Typography component="span">Adult Study Space</Typography>
 				</Box>
+				<Stack className="pc-study-factory-about-definition__copy">
+					<Typography component="span" className="pc-study-factory-about-kicker pc-study-factory-about-kicker--dark">
+						What We Are
+					</Typography>
+					<Typography component="h2">자격증공장이란?</Typography>
+					<Typography component="p" className="pc-study-factory-about-definition__lead">
+						부산에서 전문 자격시험을 준비하는 성인 수험생만을 위한 관리형 학습 공간입니다.
+					</Typography>
+					<Stack className="pc-study-factory-about-definition__facts">
+						{ABOUT_FACTS.map((fact) => (
+							<Stack key={fact.label} direction="row" justifyContent="space-between">
+								<Typography component="span">{fact.label}</Typography>
+								<Typography component="strong">{fact.value}</Typography>
+							</Stack>
+						))}
+					</Stack>
+				</Stack>
 			</Stack>
 
-			<Stack component="section" direction="row" className="pc-study-factory-intro">
-				<Typography component="span" className="section-kicker">
-					Not A Study Cafe
-				</Typography>
+			<Stack component="section" className="pc-study-factory-about-manifesto">
+				<Stack direction="row" justifyContent="space-between" className="pc-study-factory-about-manifesto__meta">
+					<Typography component="span" className="pc-study-factory-about-kicker">
+						Environment Over Willpower
+					</Typography>
+					<Typography component="span">02</Typography>
+				</Stack>
 				<Typography component="h2">
-					중요한 것은 더 큰 자극이 아니라, 매일 같은 상태로 앉을 수 있는 구조입니다.
+					의지가 아니라,
+					<br />
+					환경입니다.
 				</Typography>
-				<Typography component="p">
-					공간은 조용해야 하고, 안내는 분명해야 하며, 하루의 시작점은 흔들리지 않아야 합니다. Study Factory는 공부 외의
-					결정을 줄이기 위해 운영되는 실제 학습 시스템입니다.
-				</Typography>
-			</Stack>
-
-			<Stack component="section" className="pc-study-factory-audience">
-				<Stack direction="row" justifyContent="space-between" className="pc-study-factory-section-head">
-					<Stack>
-						<Typography component="span" className="section-kicker">
-							For Adult Exams
-						</Typography>
-						<Typography component="h2">긴 시험을 준비하는 사람에게 맞춘 공간입니다.</Typography>
-					</Stack>
+				<Stack direction="row" className="pc-study-factory-about-manifesto__copy">
+					<Typography component="strong">
+						같이 앉혀 놓는 관리가 아니라,
+						<br />
+						흔들리지 않고 오래 공부할 수 있게 만드는 관리.
+					</Typography>
 					<Typography component="p">
-						공부 시간이 길어질수록 필요한 것은 분위기보다 운영 기준입니다. 자격증공장은 그 기준을 공간 안에 반복되게
-						만듭니다.
+						자격증공장은 규칙으로 사람을 통제하는 공간이 아닙니다. 한 사람의 하루를 관찰하고,
+						공부 외의 결정을 줄여 집중이 오래 이어지는 상태를 만듭니다.
 					</Typography>
-				</Stack>
-
-				<Stack direction="row" className="pc-study-factory-audience__grid">
-					{STUDY_FACTORY_AUDIENCES.map((item) => (
-						<Stack key={item.title} className="pc-study-factory-audience__card">
-							<Typography component="strong">{item.title}</Typography>
-							<Typography component="p">{item.body}</Typography>
-						</Stack>
-					))}
-				</Stack>
-			</Stack>
-
-			<Stack id="space-flow" component="section" className="pc-study-factory-flow">
-				<Stack direction="row" justifyContent="space-between" className="pc-study-factory-section-head">
-					<Stack>
-						<Typography component="span" className="section-kicker">
-							Operating Flow
-						</Typography>
-						<Typography component="h2">도착부터 상담까지, 공부 외의 결정을 줄입니다.</Typography>
-					</Stack>
-					<Typography component="p">
-						공간 운영은 감이 아니라 반복되는 시스템으로 관리합니다. 하루가 흔들리지 않도록 작은 흐름을 먼저 정리합니다.
-					</Typography>
-				</Stack>
-
-				<Stack direction="row" className="pc-study-factory-flow__grid">
-					{STUDY_FACTORY_FLOW.map((step) => (
-						<Stack key={step.number} className="pc-study-factory-flow__step">
-							<Stack direction="row" alignItems="center" className="pc-study-factory-flow__meta">
-								<Typography component="span">{step.number}</Typography>
-								<Typography component="em">{step.label}</Typography>
-							</Stack>
-							<Typography component="strong">{step.title}</Typography>
-							<Typography component="p">{step.body}</Typography>
-						</Stack>
-					))}
-				</Stack>
-			</Stack>
-
-			<Stack component="section" className="pc-study-factory-features">
-				{STUDY_FACTORY_FEATURES.map((feature, index) => (
-					<Stack
-						key={feature.kicker}
-						direction="row"
-						className={`pc-study-factory-features__row${
-							index % 2 === 1 ? ' pc-study-factory-features__row--reverse' : ''
-						}`}
-					>
-						<Box className="pc-study-factory-features__image">
-							<Image src={feature.image} alt={feature.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" />
-						</Box>
-						<Stack className="pc-study-factory-features__copy">
-							<Typography component="span" className="section-kicker">
-								{feature.kicker}
-							</Typography>
-							<Typography component="h2">{feature.title}</Typography>
-							<Typography component="p">{feature.body}</Typography>
-							<Stack direction="row" className="pc-study-factory-features__points">
-								{feature.points.map((point) => (
-									<Typography key={point} component="em">
-										{point}
-									</Typography>
-								))}
-							</Stack>
-						</Stack>
-					</Stack>
-				))}
-			</Stack>
-
-			<Stack component="section" direction="row" className="pc-study-factory-gallery">
-				<Stack className="pc-study-factory-gallery__copy">
-					<Typography component="span" className="section-kicker">
-						Space Details
-					</Typography>
-					<Typography component="h2">공간의 밀도를 보여주는 순간들입니다.</Typography>
-					<Typography component="p">
-						좌석, 라운지, 집중 디테일처럼 하루를 지탱하는 Study Factory의 실제 분위기입니다.
-					</Typography>
-				</Stack>
-				<Stack direction="row" className="pc-study-factory-gallery__items">
-					{STUDY_FACTORY_FACILITIES.map((facility) => (
-						<Stack key={facility.title} className="pc-study-factory-gallery__item">
-							<Box className="pc-study-factory-gallery__image">
-								<Image src={facility.image} alt={facility.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" />
-							</Box>
-							<Typography component="strong">{facility.title}</Typography>
-							<Typography component="p">{facility.body}</Typography>
-						</Stack>
-					))}
-				</Stack>
-			</Stack>
-
-			<Stack component="section" direction="row" alignItems="center" className="pc-study-factory-app">
-				<Stack className="pc-study-factory-app__copy">
-					<Typography component="span" className="section-kicker">
-						Member PWA
-					</Typography>
-					<Typography component="h2">공간 운영은 앱에서도 이어집니다.</Typography>
-					<Typography component="p">
-						Study Factory App은 실제 공간 회원을 위한 운영 앱입니다. 예약, 출석, 멤버십, 공지, 상담 흐름을 모바일에서
-						확인할 수 있게 만듭니다.
-					</Typography>
-					<Link href="/products/study-factory-app">
-						앱 페이지 보기
-						<ArrowOutwardIcon fontSize="small" />
-					</Link>
-				</Stack>
-				<Stack className="pc-study-factory-app__panel">
-					<Typography component="span">Reservation</Typography>
-					<Typography component="span">Attendance</Typography>
-					<Typography component="span">Notice</Typography>
-					<Typography component="span">Consultation</Typography>
-				</Stack>
-			</Stack>
-
-			<Stack component="section" direction="row" justifyContent="space-between" className="pc-study-factory-cta">
-				<Stack>
-					<Typography component="span" className="section-kicker">
-						Visit In Busan
-					</Typography>
-					<Typography component="h2">{BRAND.koreanName}에서 오늘의 공부 흐름을 시작하세요.</Typography>
-				</Stack>
-				<Stack className="pc-study-factory-cta__actions">
-					<ArrowButton href="/contact" label="상담 예약" />
-					<a href={`tel:${BRAND.studyFactoryPhone}`}>{BRAND.studyFactoryPhone}</a>
 				</Stack>
 			</Stack>
 		</Box>

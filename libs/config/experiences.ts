@@ -46,7 +46,7 @@ export const JAGONG_ONLINE_EXPERIENCE: ExperienceLanding = {
 	hero: {
 		id: 'jagong-film',
 		type: 'video',
-		src: MEDIA_ASSETS.jagongOnlineFilm,
+		src: MEDIA_ASSETS.jagongOnlineMain,
 		alt: '재택근무반 온라인 학습 영상',
 		label: '재택근무반',
 		href: '/jagong-online/about',
