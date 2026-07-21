@@ -51,30 +51,5 @@ export const JAGONG_ONLINE_EXPERIENCE: ExperienceLanding = {
 		label: '재택근무반',
 		href: '/jagong-online/about',
 	},
-	media: [
-		{
-			id: 'jagong-story',
-			type: 'brand',
-			src: '/images/brands/jagong-online-logo.webp',
-			alt: '온라인관리형독서실 재택근무반 로고',
-			label: '서비스 소개',
-			href: '/jagong-online/about',
-		},
-		{
-			id: 'jagong-routine',
-			type: 'video',
-			src: MEDIA_ASSETS.jagongOnlineFilm,
-			alt: '재택근무반 온라인 루틴 영상',
-			label: '온라인 루틴',
-			href: '/jagong-online/about',
-		},
-		{
-			id: 'jagong-consultation',
-			type: 'brand',
-			src: '/images/brands/jagong-online-logo.webp',
-			alt: '',
-			label: '상담 예약',
-			href: '/contact',
-		},
-	],
+	media: [],
 };

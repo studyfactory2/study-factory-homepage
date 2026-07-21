@@ -3,9 +3,10 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import type { ExperienceLanding, ExperienceMedia } from '../../../config';
+import JagongOnlineJourney from '../../common/experiences/JagongOnlineJourney';
+import JagongOnlineOrigin from '../../common/experiences/JagongOnlineOrigin';
 import StudyFactoryJourney from '../../common/experiences/StudyFactoryJourney';
 import StudyFactoryOrigin from '../../common/experiences/StudyFactoryOrigin';
-import SoundFilm from '../../common/experiences/SoundFilm';
 
 interface PcExperienceLandingProps {
 	experience: ExperienceLanding;
@@ -24,8 +25,8 @@ const ExperienceMediaVisual = ({ item, priority = false }: { item: ExperienceMed
 };
 
 const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
-	const soundFilm = experience.slug === 'study-factory' ? undefined : experience.media.find((item) => item.hasSoundControl);
-	const editorialMedia = experience.media.filter((item) => !item.hasSoundControl);
+	const isStudyFactory = experience.slug === 'study-factory';
+	const isJagongOnline = experience.slug === 'jagong-online';
 
 	return (
 		<Box component="main" className={`experience-page pc-experience-page pc-experience-page--${experience.slug}`}>
@@ -40,16 +41,14 @@ const PcExperienceLanding = ({ experience }: PcExperienceLandingProps) => {
 				</Stack>
 			</Box>
 
-			{experience.slug === 'study-factory' && <StudyFactoryOrigin className="pc-experience-page__origin" />}
-			{experience.slug === 'study-factory' ? (
-				<StudyFactoryJourney classPrefix="pc-experience-page" />
-			) : (
-				soundFilm && <SoundFilm src={soundFilm.src} alt={soundFilm.alt} className="pc-experience-page__feature-film" />
-			)}
+			{isStudyFactory && <StudyFactoryOrigin className="pc-experience-page__origin" />}
+			{isStudyFactory && <StudyFactoryJourney classPrefix="pc-experience-page" />}
+			{isJagongOnline && <JagongOnlineOrigin className="pc-experience-page__origin" />}
+			{isJagongOnline && <JagongOnlineJourney classPrefix="pc-experience-page" />}
 
-			{editorialMedia.length > 0 && (
+			{experience.media.length > 0 && (
 				<Stack component="section" className="pc-experience-page__media-grid">
-					{editorialMedia.map((item, index) => (
+					{experience.media.map((item, index) => (
 						<Box
 							component={Link}
 							href={item.href}

@@ -7,11 +7,12 @@ import type { StudyFactoryJourneyCareItem } from '../../../config';
 interface StudyFactoryCareProps {
 	className: string;
 	items: StudyFactoryJourneyCareItem[];
+	ariaLabel?: string;
 }
 
-const StudyFactoryCare = ({ className, items }: StudyFactoryCareProps) => {
+const StudyFactoryCare = ({ className, items, ariaLabel = '자격증공장 케어' }: StudyFactoryCareProps) => {
 	return (
-		<Stack component="section" className={className} aria-label="자격증공장 케어">
+		<Stack component="section" className={className} aria-label={ariaLabel}>
 			{items.map((item) => (
 				<Stack component={Link} href={item.href} key={item.id}>
 					<Box component="img" src={item.src} alt={item.alt} />
