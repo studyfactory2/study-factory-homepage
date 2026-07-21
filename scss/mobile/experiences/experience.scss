@@ -247,6 +247,33 @@
 		}
 	}
 
+	.mobile-experience-page--study-factory,
+	.mobile-experience-page--jagong-online {
+		.mobile-experience-page__care {
+			flex-direction: row;
+			align-items: stretch;
+			gap: 10px;
+			padding: 0 16px 64px;
+
+			a {
+				width: calc((100% - 10px) / 2);
+				min-width: 0;
+				aspect-ratio: 3 / 4;
+			}
+
+			img {
+				height: 100%;
+				aspect-ratio: auto;
+			}
+
+			span {
+				bottom: 14px;
+				width: calc(100% - 20px);
+				font-size: 15px;
+			}
+		}
+	}
+
 	.mobile-experience-page__gallery {
 		position: relative;
 		width: calc(100% - 40px);
