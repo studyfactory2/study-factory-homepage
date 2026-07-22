@@ -24,6 +24,7 @@ export type JagongOnlineJourneyBlock =
 				title: string;
 				body: string;
 			};
+			hasSoundControl?: boolean;
 			isClosing?: boolean;
 	  }
 	| {
@@ -44,8 +45,9 @@ export const JAGONG_ONLINE_JOURNEY: JagongOnlineJourneyBlock[] = [
 	{
 		id: 'online-routine-film',
 		type: 'film',
-		src: MEDIA_ASSETS.jagongOnlineFilm,
+		src: MEDIA_ASSETS.jagongOnlineAd,
 		alt: '재택근무반 온라인 학습 루틴 영상',
+		hasSoundControl: false,
 	},
 	{
 		id: 'routine-care',
@@ -113,7 +115,7 @@ export const JAGONG_ONLINE_JOURNEY: JagongOnlineJourneyBlock[] = [
 	{
 		id: 'closing-film',
 		type: 'film',
-		src: MEDIA_ASSETS.jagongOnlineFilm,
+		src: MEDIA_ASSETS.jagongOnlineAdClosing,
 		alt: '재택근무반 온라인 학습 안내 영상',
 		copy: {
 			title: '오늘의 공부를 연결하세요.',

@@ -20,6 +20,7 @@ const JagongOnlineJourney = ({ classPrefix }: JagongOnlineJourneyProps) => {
 							className={`${classPrefix}__feature-film`}
 							modifierClassName={block.isClosing ? `${classPrefix}__feature-film--closing` : undefined}
 							copy={block.copy}
+							showSoundControl={block.hasSoundControl !== false}
 						/>
 					);
 				}

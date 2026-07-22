@@ -15,9 +15,17 @@ interface SoundFilmProps {
 		title: string;
 		body: string;
 	};
+	showSoundControl?: boolean;
 }
 
-const SoundFilm = ({ src, alt, className, modifierClassName, copy }: SoundFilmProps) => {
+const SoundFilm = ({
+	src,
+	alt,
+	className,
+	modifierClassName,
+	copy,
+	showSoundControl = true,
+}: SoundFilmProps) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [muted, setMuted] = useState(true);
 
@@ -50,14 +58,16 @@ const SoundFilm = ({ src, alt, className, modifierClassName, copy }: SoundFilmPr
 					<Typography component="p">{copy.body}</Typography>
 				</Stack>
 			)}
-			<IconButton
-				className={`${className}__sound-toggle`}
-				onClick={toggleSound}
-				aria-label={muted ? '영상 소리 켜기' : '영상 소리 끄기'}
-			>
-				{muted ? <VolumeOffRoundedIcon /> : <VolumeUpRoundedIcon />}
-				<Typography component="span">{muted ? '소리 켜기' : '소리 끄기'}</Typography>
-			</IconButton>
+			{showSoundControl && (
+				<IconButton
+					className={`${className}__sound-toggle`}
+					onClick={toggleSound}
+					aria-label={muted ? '영상 소리 켜기' : '영상 소리 끄기'}
+				>
+					{muted ? <VolumeOffRoundedIcon /> : <VolumeUpRoundedIcon />}
+					<Typography component="span">{muted ? '소리 켜기' : '소리 끄기'}</Typography>
+				</IconButton>
+			)}
 		</Box>
 	);
 };

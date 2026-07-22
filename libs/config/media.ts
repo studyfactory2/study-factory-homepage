@@ -11,7 +11,12 @@ export const MEDIA_ASSETS = {
 	studyFactoryAd5: 'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/study-factory_ad_5.mp4',
 	jagongOnlineMain:
 		'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/jagong-online_main.mp4',
-	jagongOnlineFilm: 'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/jagong-ad_main.mp4',
+	jagongOnlineAd:
+		'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/jagong-online_ad.mp4',
+	jagongOnlineAdClosing:
+		'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/jagong-online_ad1.mp4',
+	jagongOnlineFilm:
+		'https://pub-e4b92818bc2e41ebbf3b6d4b00adfef3.r2.dev/videos/jagong-online_ad3.mp4',
 	productPromoVideos: {
 		studyFactoryApp: '',
 		jagongOnline: '',
