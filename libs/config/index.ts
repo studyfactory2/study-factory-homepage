@@ -1,6 +1,7 @@
 export * from './brand';
 export * from './experiences';
 export * from './homepage';
+export * from './jagongOnline';
 export * from './jagongOnlineJourney';
 export * from './media';
 export * from './navigation';

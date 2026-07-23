@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import LayoutMain from '../../../libs/components/common/layout/LayoutMain';
 import SeoHead from '../../../libs/components/common/seo/SeoHead';
-import MobileProductDetailPage from '../../../libs/components/mobile/products/MobileProductDetailPage';
-import PcProductDetailPage from '../../../libs/components/pc/products/PcProductDetailPage';
+import MobileJagongOnlineAboutPage from '../../../libs/components/mobile/products/MobileJagongOnlineAboutPage';
+import PcJagongOnlineAboutPage from '../../../libs/components/pc/products/PcJagongOnlineAboutPage';
 import { createPageTitle, getProductBySlug } from '../../../libs/config';
 import useDeviceDetect from '../../../libs/hooks/useDeviceDetect';
 
@@ -21,9 +21,9 @@ const JagongOnlineAbout: NextPage = () => {
 				description={jagongOnline.description}
 			/>
 			{device === 'mobile' ? (
-				<MobileProductDetailPage product={jagongOnline} />
+				<MobileJagongOnlineAboutPage product={jagongOnline} />
 			) : (
-				<PcProductDetailPage product={jagongOnline} />
+				<PcJagongOnlineAboutPage product={jagongOnline} />
 			)}
 		</>
 	);

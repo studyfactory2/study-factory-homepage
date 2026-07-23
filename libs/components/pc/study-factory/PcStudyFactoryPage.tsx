@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { MEDIA_ASSETS } from '../../../config';
+import { MEDIA_ASSETS, STUDY_FACTORY_AUDIENCES, STUDY_FACTORY_FLOW } from '../../../config';
 
 const ABOUT_FACTS = [
 	{ label: '대상', value: '성인 수험생 전용' },
@@ -128,6 +130,80 @@ const PcStudyFactoryPage = () => {
 						공부 외의 결정을 줄여 집중이 오래 이어지는 상태를 만듭니다.
 					</Typography>
 				</Stack>
+			</Stack>
+
+			<Stack component="section" className="pc-study-factory-about-flow">
+				<Stack direction="row" justifyContent="space-between" className="pc-study-factory-about-flow__heading">
+					<Stack>
+						<Typography component="span" className="pc-study-factory-about-kicker pc-study-factory-about-kicker--dark">
+							How We Operate
+						</Typography>
+						<Typography component="h2">
+							공부 밖의 결정을 줄이는
+							<br />
+							하루의 운영 흐름.
+						</Typography>
+					</Stack>
+					<Typography component="p">
+						공간에 도착하는 순간부터 상담이 필요한 순간까지,
+						<br />
+						반복되는 하루를 하나의 흐름으로 연결합니다.
+					</Typography>
+				</Stack>
+				<Box className="pc-study-factory-about-flow__grid">
+					{STUDY_FACTORY_FLOW.map((step) => (
+						<Stack key={step.number} className="pc-study-factory-about-flow__step">
+							<Stack direction="row" justifyContent="space-between" alignItems="center">
+								<Typography component="span">{step.number}</Typography>
+								<Typography component="small">{step.label}</Typography>
+							</Stack>
+							<Typography component="h3">{step.title}</Typography>
+							<Typography component="p">{step.body}</Typography>
+						</Stack>
+					))}
+				</Box>
+			</Stack>
+
+			<Stack component="section" className="pc-study-factory-about-audience">
+				<Stack className="pc-study-factory-about-audience__intro">
+					<Typography component="span" className="pc-study-factory-about-kicker pc-study-factory-about-kicker--dark">
+						Who It Is For
+					</Typography>
+					<Typography component="h2">
+						오래 준비하는 사람에게는
+						<br />
+						오래 버틸 수 있는 구조가 필요합니다.
+					</Typography>
+				</Stack>
+				<Stack className="pc-study-factory-about-audience__list">
+					{STUDY_FACTORY_AUDIENCES.map((audience, index) => (
+						<Stack key={audience.title} direction="row" className="pc-study-factory-about-audience__item">
+							<Typography component="span">0{index + 1}</Typography>
+							<Stack>
+								<Typography component="h3">{audience.title}</Typography>
+								<Typography component="p">{audience.body}</Typography>
+							</Stack>
+						</Stack>
+					))}
+				</Stack>
+			</Stack>
+
+			<Stack component="section" className="pc-study-factory-about-cta">
+				<Typography component="span" className="pc-study-factory-about-kicker">
+					Visit &amp; Consultation
+				</Typography>
+				<Typography component="h2">
+					내 공부에 맞는 공간인지,
+					<br />
+					직접 이야기해 보세요.
+				</Typography>
+				<Typography component="p">
+					세부 운영 방식과 이용 조건은 상담을 통해 정확하게 안내합니다.
+				</Typography>
+				<Box component={Link} href="/contact" className="pc-study-factory-about-cta__link">
+					상담 예약하기
+					<ArrowOutwardIcon fontSize="small" />
+				</Box>
 			</Stack>
 		</Box>
 	);
